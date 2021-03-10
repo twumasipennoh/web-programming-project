@@ -44,6 +44,8 @@ nav a:hover, a:focus {color: gray;}
 main {
   padding: 25em;
   background-image: url(../images/background.jpg), url(../images/black_box.jpg);
+  background-color: rgba(100,0,100,.5);
+  background-blend-mode: multiply;
   background-position: left, right;
   background-size: 90% 100%, 25% 100%;
   background-repeat: no-repeat;
