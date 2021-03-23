@@ -1,5 +1,11 @@
 body {
-  font-family: Bahnschrift SemiBold, sans-serif;
+  font-family: Bahnschrift, sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+p,h1 {
   padding: 0;
   margin: 0;
 }
@@ -10,7 +16,7 @@ header {
 }
 
 #logo {
-  padding: 0em;
+  padding: .75rem;
 }
 
 #nav_menu {
@@ -42,11 +48,39 @@ nav a:hover, a:focus {color: gray;}
 
 /* Main */
 main {
-  padding: 25em;
+  padding: 5em 5em 20em;
   background-image: url(../images/background.jpg), url(../images/black_box.jpg);
-  background-color: rgba(100,0,100,.5);
+  background-color: rgba(0,0,0,.2);
   background-blend-mode: multiply;
   background-position: left, right;
-  background-size: 90% 100%, 25% 100%;
+  background-size: 75% 100%, 25% 100%;
   background-repeat: no-repeat;
+
+}
+
+main p,h1 {
+  color: white;
+  padding: .75rem 0;
+}
+
+.right {
+  text-align: right;
+  font-size: 4.25rem;
+}
+
+main p {
+  width: 35%;
+  text-align: center;
+  float: right;
+  font-size: 150%;
+  padding-right: 2rem;
+  font-weight: lighter;
+}
+
+footer {
+  /* color: white; */
+  font-weight: lighter;
+  text-align: center;
+  /* background-color: grey; */
+  padding: 1rem 0;
 }
