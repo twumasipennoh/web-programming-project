@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../images/logo_icon.ico">
     <link rel="stylesheet" href="../stylesheets/timesheetStyles.css">
     <meta name="description" content="Computer Software Company">
+    <script src="../javascript/timesheetData.js"></script>
   </head>
   <body>
 
@@ -25,36 +26,92 @@
     </header>
 
     <main>
+      <div class="employee">
+        <h1>Employee:</h1>
+        <h3>Title:</h3>
+        <h3>Employee ID:</h3>
+      </div>
       <table>
+        <caption>Week:</caption>
         <thead>
           <tr>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Time In</th>
+            <th>Lunch</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Hours Worked</th>
           </tr>
         </thead>
         <tbody>
-          <?php
-            $connect = mysql_connect(///Stuff that is needed from the database);
-            if (!connect) {
-              die(mysql_error());
-            }
-            mysql_select_db("Name of database");
-            $results = mysql_query("SELECT * ")
-            while($row = mysql_fetch_array($results)) {
-            ?>
-              <tr>
-                <td><?php echo $row['Name']?></td>
-              </tr>
-            <?php
-            }
-            ?>
+          <tr class="sunday">
+            <th class="day">Sunday</th>
+            <td id="sun_date" class="date"></td>
+            <td id="sun_in" class="time_in"><input type="time" required></td>
+            <td id="sun_lunch" class="lunch"><input type="time" required></td>
+            <td id="sun_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="sun_out" class="out"><input type="time" required></td>
+            <td id="sun_total" class="total"></td>
+          </tr>
+          <tr class="monday">
+            <th class="day">Monday</th>
+            <td id="mon_date" class="date"></td>
+            <td id="mon_in" class="time_in"><input type="time" required></td>
+            <td id="mon_lunch" class="lunch"><input type="time" required></td>
+            <td id="mon_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="mon_out" class="out"><input type="time" required></td>
+            <td id="mon_total" class="total"></td>
+          </tr>
+          <tr class="tuesday">
+            <th class="day">Tuesday</th>
+            <td id="tues_date" class="date"></td>
+            <td id="tues_in" class="time_in"><input type="time" required></td>
+            <td id="tues_lunch" class="lunch"><input type="time" required></td>
+            <td id="tues_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="tues_out" class="out"><input type="time" required></td>
+            <td id="tues_total" class="total"></td>
+          </tr>
+          <tr class="wednesday">
+            <th class="day">Wednesday</th>
+            <td id="wed_date" class="date"></td>
+            <td id="wed_in" class="time_in"><input type="time" required></td>
+            <td id="wed_lunch" class="lunch"><input type="time" required></td>
+            <td id="wed_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="wed_out" class="out"><input type="time" required></td>
+            <td id="wed_total" class="total"></td>
+          </tr>
+          <tr class="thursday">
+            <th class="day">Thursday</th>
+            <td id="thur_date" class="date"></td>
+            <td id="thur_in" class="time_in"><input type="time" required></td>
+            <td id="thur_lunch" class="lunch"><input type="time" required></td>
+            <td id="thur_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="thur_out" class="out"><input type="time" required></td>
+            <td id="thur_total" class="total"></td>
+          </tr>
+          <tr class="friday">
+            <th class="day">Friday</th>
+            <td id="fri_date" class="date"></td>
+            <td id="fri_in" class="time_in"><input type="time" required></td>
+            <td id="fri_lunch" class="lunch"><input type="time" required></td>
+            <td id="fri_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="fri_out" class="out"><input type="time" required></td>
+            <td id="fri_total" class="total"></td>
+          </tr>
+          <tr class="saturday">
+            <th class="day">Saturday</th>
+            <td id="sat_date" class="date"></td>
+            <td id="sat_in" class="time_in"><input type="time" required></td>
+            <td id="sat_lunch" class="lunch"><input type="time" required></td>
+            <td id="sat_lunch_in" class="time_in_lunch"><input type="time" required></td>
+            <td id="sat_out" class="out"><input type="time" required></td>
+            <td id="sat_total" class="total"></td>
+          </tr>
         </tbody>
       </table>
+      <h2 class="total_hours">Total Hours:</h2>
+      <input id="save_button" type="button" name="save" value="Save Changes">
     </main>
 
 
@@ -63,3 +120,28 @@
     </footer>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+<!-- <?php
+$connect = mysql_connect(///Stuff that is needed from the database);
+if (!connect) {
+die(mysql_error());
+}
+mysql_select_db("Name of database");
+$results = mysql_query("SELECT * ")
+while($row = mysql_fetch_array($results)) {
+?>
+<tr>
+<td><?php echo $row['Name']?></td>
+</tr>
+<?php
+}
+?> -->

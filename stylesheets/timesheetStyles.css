@@ -11,6 +11,14 @@ p,h1 {
 }
 
 /* ********************************************************************************************* */
+/* Main */
+
+.employee {
+  padding: 1em 2em;
+}
+
+
+/* ********************************************************************************************* */
 /* Header */
 header {
     border-bottom: 2px solid black;
@@ -50,17 +58,39 @@ nav a:hover, a:focus {color: gray;}
 
 /* ********************************************************************************************* */
 /* Table */
+table,th,td,input,h1 {
+  padding: 0;
+  margin: 0;
+}
+
 table {
   width: 90%;
-  /* border: 1px solid black; */
   border-collapse: collapse;
   margin: 2em auto;
 }
 
+table caption {
+  font-size: 2em;
+  margin-bottom: .5em;
+  text-align: left;
+}
+
 th,td {
   border: 1px solid lightgrey;
-  padding: .25rem 2rem;
+  padding: .25em 0em;
+  text-align: center;
 }
+
+.total_hours {
+  padding-left: 5em;
+}
+
+main #save_button {
+  padding: .25em 1em;
+  margin: 1em 7.5em;
+  font-size: 1rem;
+}
+
 
 /* ********************************************************************************************* */
 /* Footer */
