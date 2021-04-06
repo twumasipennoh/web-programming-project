@@ -9,6 +9,6 @@ $job_title=$_POST['job_title'];
 $email=$_POST['email'];
 
 //Execute the query
-$sql = "INSERT INTO HR_Tables.Employee(firstName,lastName,jobTitle,emailAddress) VALUES(?,?,?,?)";
+$sql = "INSERT INTO HR_Tables.Employee(employeeID,firstName,lastName,jobTitle,emailAddress) VALUES(?,?,?,?,?)";
 $stmt=$conn->prepare($sql);
-$stmt->execute([$first_name, $last_name, $job_title, $email]);
+$stmt->execute([0,$first_name, $last_name, $job_title, $email]);
