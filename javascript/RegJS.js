@@ -3,7 +3,19 @@ var $ = function(id) {
 };
 
 var resetForm = function() {
-	
+$("eID").value = "";
+$("em").value = "";
+$("un").value = "";
+$("pw").value = "";
+$("pw2").value = "";
+$("fname").value = "";
+$("lname").value = "";
+$("ph").value = "";
+$("st1").value = "";
+$("st2").value = "";
+$("city").value = "";
+$("state").value = "";
+$("zip").value = "";
 $("iderror").innerHTML = "*";
 $("emailerror").innerHTML = "*";
 $("unerror").innerHTML = "*";
