@@ -1,9 +1,9 @@
 <?php
-$host="web-programming-db.cmosf0873dbb.us-east-2.rds.amazonaws.com"; //provide endpoint
+$host=""; //provide endpoint
 $port=3306;
 $socket="";
-$user="cs4300_dev";//provide username
-$password="knowledgeapp12"; //provide password
+$user="";//provide username
+$password=""; //provide password
 $dbname="";
 
 $conn="";
