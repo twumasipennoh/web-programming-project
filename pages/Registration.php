@@ -24,13 +24,13 @@
 <h3>Employee Registration Portal</h3>
 <p>Fields marked with an asterisk(*) are required.</p>
 
-<form id="registration">
+<form id="registration" action="..\db_connection\register_employee.php" method="post">
 		<label for="eID">Employee ID:</label>
 		<input type="text" name="eID" id="eID" required><span id ="iderror"></span><br>
 		<label for="email">E-Mail:</label>
-		<input type="email" id ="em" name="email" required><span id ="emailerror"></span><br>
+		<input type="email" id ="email" name="email" required><span id ="emailerror"></span><br>
 		<label for ="username">Username:</label>
-		<input type="text" name="username" id="un" required><span id ="unerror"></span><br>
+		<input type="text" name="username" id="username" required><span id ="unerror"></span><br>
 		<label for ="password">Password:</label>
 		<input type="password" name="password" id="pw" required><span id ="pwerror"></span><br>
 		<label for ="password2">Confirm Password:</label>
@@ -40,9 +40,9 @@
 		<label for="lname">Last Name:</label>
 		<input type="text" name="lname" id="lname" required><span id ="lnerror"></span><br>
 		<label for="phone">Phone Number:</label>
-		<input type="tel" id="ph" name="phone"><br>
+		<input type="tel" id="phone" name="phone"><br>
 		<label for="st1">Street Address 1:</label>
-		<input type="text" id="st1" name="st2"><br>
+		<input type="text" id="st1" name="st1"><br>
 		<label for="st2">Street Address 2:</label>
 		<input type="text" id="st2" name="st2"><br>
 		<label for="city">City:</label>
@@ -52,9 +52,8 @@
 		<label for="zip">Zip Code:</label>
 		<input type="text" id="zip" name="zip"><br>
 
-		<input type="button" id="submit" value="Submit"><br>
+		<input type="submit" id="submit" value="Submit"><br>
 		<input type="button" id="resetform" value="Reset">
-
 </form>
 
 </main>
