@@ -1,15 +1,19 @@
 <?php
-  require_once('../db_connection/database.php');
+  $sunday = date('Y-m-d', strtotime('last sunday'));
+  $monday = date('Y-m-d', strtotime($sunday. '+1 day'));
+  $tuesday = date('Y-m-d', strtotime($sunday. '+2 days'));
+  $wednesday = date('Y-m-d', strtotime($sunday. '+3 days'));
+  $thursday = date('Y-m-d', strtotime($sunday. '+4 days'));
+  $friday = date('Y-m-d', strtotime($sunday. '+5 days'));
+  $saturday = date('Y-m-d', strtotime('saturday this week'));
 
-  $employeeID = $_GET['employeeID']; // Gets the employeeID from previous pages
-  echo $employeeID;
-  $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
-  $shifts = $conn -> query($query);
+  echo $sunday. "<br>";
+  echo $monday. "<br>";
+  echo $tuesday. "<br>";
+  echo $wednesday. "<br>";
+  echo $thursday. "<br>";
+  echo $friday. "<br>";
+  echo $saturday. "<br>";
 
-  $query2 = "SELECT * FROM HR_Tables.Employee WHERE employeeID=$employeeID";
-  $return = $conn -> query($query2);
-  $employee = $return -> fetch();
-  echo $employee['firstName'];
-  echo $employee['lastName'];
 
 ?>

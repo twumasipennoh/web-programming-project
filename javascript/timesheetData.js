@@ -16,16 +16,19 @@ var loadTimesheet = function(){
 
   for (let i = 0; i < 7; i++){
     let sunday = curr.getDate() - curr.getDay() + i;
-    let day = new Date(curr.setDate(sunday)).toISOString().slice(5,10);
+    let day = new Date(curr.setDate(sunday)).toISOString().slice(0,10);
     week.push(day);
   }
 
+  $('startDate').innerHTML = week[0];
+  $('endDate').innerHTML = week[6];
+
   let splitDate = week[0].split("-");
-  $("week").innerHTML = "Week of " + months[parseInt(splitDate[0])] + " " + splitDate[1];
+  $("week").innerHTML = "Week of " + months[parseInt(splitDate[1])] + " " + splitDate[2];
 
   for (let i = 0; i < days.length; i++){
     splitDate = week[i].split("-");
-    $(days[i] + "date").innerHTML = months[parseInt(splitDate[0])] + " " + splitDate[1];
+    $(days[i] + "date").innerHTML = months[parseInt(splitDate[1])] + " " + splitDate[2];
   }
 }
 
@@ -80,6 +83,5 @@ window.onload = function(){
   loadTimesheet();
   $("save_button").onclick = function(){
     calcDayTotal();
-    // calcTotalHours;
   };
 };
