@@ -3,7 +3,7 @@
 	<title>Artec - Login</title>
 	<link rel="shortcut icon" href="../images/logo_icon.ico">
 	<link rel="stylesheet" href="../stylesheets/RegCSS.css">
-	<script src="../javascript/RegJS.js"></script>
+	<script src="../javascript/validateLoginForm.js"></script>
 </head>
 
 <body>
@@ -21,11 +21,15 @@
 	<main>
 		<h3>Employee Login Portal</h3>
 
-		<p id="error-message">Error: Wrong username or password</p>
-		<form id="login" action="..\db_connection\login_employee.php" method="post">
+		<p id="error-message"><?php echo $error; 
+							        $error = "";
+							  ?>
+		</p>
+		<form id="login" action="..\db_connection\login_employee.php" method="post" onsubmit="return validateLoginForm()">
 			<label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 
+			
 			<label for ="password">Password:</label>
 			<input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
 

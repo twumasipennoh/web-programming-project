@@ -53,6 +53,13 @@ main #error-message {
 	color: red;
 }
 
+#unerror {
+	color: red;
+}
+
+#pwerror {
+	color: red;
+}
 
 body {
 	
@@ -73,11 +80,11 @@ label {
 }
 
 #login {
-	text-align: center;
+	margin-left: 165px;
 }
 
 #login input[type=submit]{
-	margin-left: 20px;
+	margin-left: 115px;
 }
 
 input[type=submit]{

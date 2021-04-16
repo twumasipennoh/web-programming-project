@@ -18,6 +18,7 @@ $statement->closeCursor();
 
 if($returned_user == NULL){ //if provided username and password is wrong
     //Display the login page with an error message
+    $error = "Error: Wrong username or password";
     include('../pages/login_error.php');
 } else{
     //Display the logged in homepage

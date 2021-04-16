@@ -3,7 +3,7 @@
 	<title>Artec - Login</title>
 	<link rel="shortcut icon" href="../images/logo_icon.ico">
 	<link rel="stylesheet" href="../stylesheets/RegCSS.css">
-	<script src="../javascript/RegJS.js"></script>
+	<script src="../javascript/validateLoginForm.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 	<main>
 		<h3>Employee Login Portal</h3>
 
-		<form id="login" action="..\db_connection\login_employee.php" method="post">
+		<form id="login" action="..\db_connection\login_employee.php" method="post" onsubmit="return validateLoginForm()">
 			<label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 
