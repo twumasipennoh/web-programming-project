@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once('database.php');
 
 // create a variable
@@ -17,12 +17,13 @@ $returned_user = $statement->fetch();
 $statement->closeCursor();
 
 if($returned_user == NULL){ //if provided username and password is wrong
-    //Display the login page with an error message 
+    //Display the login page with an error message
     print "<p>Error: username or password is incorrect</p>";
     include('../pages/login.php');
 } else{
     //Display the logged in homepage
-    include('../pages/user_home_page.html');
+    $employeeID = $returned_user['employeeID'];
+    include('../pages/user_home_page.php');
 }
 
 ?>

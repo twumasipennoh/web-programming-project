@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -16,7 +20,7 @@
       <nav id="nav_menu">
         <ul>
           <li><a href="../pages/home_page.html" class="current">Home</a></li>
-          <li><a href="../pages/timesheet.html">Timesheet</a></li>
+          <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
           <li><a href="../pages/home_page.html">Requests</a></li>
           <li><a href="../pages/home_page.html">Pay Info</a></li>
           <li><a href="../pages/home_page.html"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
@@ -25,6 +29,7 @@
     </header>
 
     <main>
+      <!-- <h1 name="employeeID" hidden><?php echo $employeeID ?></h1> -->
       <h1 class="right">Work Hard.</h1>
       <h1 class="right">Make It Happen.</h1>
       <p>Our goal is to help you achieve your goals and making the journey there as simple as possible. Here you will be able to keep track of everything from timesheets to your W-2. Just let us know if you have any questions.</p>
