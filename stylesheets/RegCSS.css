@@ -44,13 +44,11 @@ main {
 	
 }
 main h3 {
-	
 	text-align:center;
-	
+	padding-bottom: 15px;
 }
 
 main #error-message {
-	padding-top: 20px;
 	text-align: center;
 	color: red;
 }
