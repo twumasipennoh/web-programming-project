@@ -21,6 +21,7 @@
 	<main>
 		<h3>Employee Login Portal</h3>
 
+		<p id="error-message">Error: Wrong username or password</p>
 		<form id="login" action="..\db_connection\login_employee.php" method="post">
 			<label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>

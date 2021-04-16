@@ -44,9 +44,13 @@ main {
 	
 }
 main h3 {
-	
 	text-align:center;
-	
+	padding-bottom: 15px;
+}
+
+main #error-message {
+	text-align: center;
+	color: red;
 }
 
 
@@ -55,21 +59,33 @@ body {
 	font-family: Bahnschrift, sans-serif;
 	max-width: 1000px;
 	margin:auto;
-	
 }
 
-label {
-	
+#login label {
+	width: 85px;
+}
+
+label {	
 	display:inline-block;
 	width:150px;
 	text-align:right;	
 	margin-bottom:2em;
-	
-	
+}
+
+#login {
+	text-align: center;
+}
+
+#login input[type=submit]{
+	margin-left: 20px;
+}
+
+input[type=submit]{
+	margin-left: 200px;
 }
 
 input[type=button]{
 	
-	margin-left:25em;
+	margin-left:150px;
 	margin-bottom:.5em;
 }

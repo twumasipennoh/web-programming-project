@@ -42,9 +42,9 @@
         <ul>
           <li><a href="../pages/user_home_page.php">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>" class="current">Timesheet</a></li>
-          <li><a href="../pages/home_page.html">Requests</a></li>
-          <li><a href="../pages/home_page.html">Pay Info</a></li>
-          <li><a href="../pages/home_page.html"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+          <li><a href="../pages/requestPage.html">Requests</a></li>
+          <li><a href="../pages/user_home_page.php">Pay Info</a></li>
+          <li><a href="../pages/user_home_page.php"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
         </ul>
       </nav>
     </header>
