@@ -3,8 +3,17 @@
 
   $employeeID = $_GET['employeeID']; // Gets the employeeID from previous pages
 
-  // Get the shifts the employee has worked
-  $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
+  // Get days shown in timesheet
+  $sunday = date('Y-m-d', strtotime('last sunday'));
+  $monday = date('Y-m-d', strtotime($sunday. '+1 day'));
+  $tuesday = date('Y-m-d', strtotime($sunday. '+2 days'));
+  $wednesday = date('Y-m-d', strtotime($sunday. '+3 days'));
+  $thursday = date('Y-m-d', strtotime($sunday. '+4 days'));
+  $friday = date('Y-m-d', strtotime($sunday. '+5 days'));
+  $saturday = date('Y-m-d', strtotime('saturday this week'));
+
+  // Get the shifts the employee has worked in the current week
+  $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND date BETWEEN $sunday AND $saturday";
   $shifts = $conn -> query($query);
 
   // Get the particular employee to get their info
@@ -41,6 +50,8 @@
     </header>
 
     <main>
+      <p id="startDate" hidden></p>
+      <p id="endDate" hidden></p>
       <div class="employee">
         <h1>Employee: <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
         <h3>Title:<?php echo $employee['jobTitle']; ?></h3>
