@@ -27,7 +27,6 @@ var loadTimesheet = function(){
     splitDate = week[i].split("-");
     $(days[i] + "date").innerHTML = months[parseInt(splitDate[0])] + " " + splitDate[1];
   }
-
 }
 
 var calcDayTotal = function(){
