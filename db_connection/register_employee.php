@@ -49,6 +49,6 @@ $statement2->execute([
 $statement2->closeCursor();
 
 //Display the Registration Form (WILL CHANGE TO Confirmation Page) again 
-include('..\pages\registration.php');
+include('..\pages\RegConfirmation.html');
 
 ?>

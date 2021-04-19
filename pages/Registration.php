@@ -23,21 +23,21 @@
 		<h3>Employee Registration Portal</h3>
 		<p>Fields marked with an asterisk(*) are required.</p>
 
-		<form id="registration" action="..\db_connection\register_employee.php" method="post">
+		<form id="registration" action="../db_connection/register_employee.php" onsubmit="return validateValues()" method="post">
 			<label for="eID">Employee ID:</label>
-			<input type="text" name="eID" id="eID" required><span id ="iderror"></span><br>
+			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
 			<label for="email">E-Mail:</label>
-			<input type="email" id ="email" name="email" required><span id ="emailerror"></span><br>
+			<input type="email" id ="email" name="email"><span id ="emailerror"></span><br>
 			<label for ="username">Username:</label>
-			<input type="text" name="username" id="username" required><span id ="unerror"></span><br>
+			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 			<label for ="password">Password:</label>
-			<input type="password" name="password" id="pw" required><span id ="pwerror"></span><br>
+			<input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
 			<label for ="password2">Confirm Password:</label>
-			<input type="password" name="password2" id ="pw2" required><span id ="pw2error"></span><br>
+			<input type="password" name="password2" id ="pw2"><span id ="pw2error"></span><br>
 			<label for="fname">First Name:</label>
-			<input type="text" name="fname" id="fname" required><span id ="fnerror"></span><br>
+			<input type="text" name="fname" id="fname"><span id ="fnerror"></span><br>
 			<label for="lname">Last Name:</label>
-			<input type="text" name="lname" id="lname" required><span id ="lnerror"></span><br>
+			<input type="text" name="lname" id="lname"><span id ="lnerror"></span><br>
 			<label for="phone">Phone Number:</label>
 			<input type="tel" id="phone" name="phone"><br>
 			<label for="st1">Street Address 1:</label>

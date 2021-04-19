@@ -4,8 +4,8 @@ var $ = function(id) {
 
 var resetForm = function() {
 $("eID").value = "";
-$("em").value = "";
-$("un").value = "";
+$("email").value = "";
+$("username").value = "";
 $("pw").value = "";
 $("pw2").value = "";
 $("fname").value = "";
@@ -27,14 +27,14 @@ $("lnerror").innerHTML = "*";
 	
 };
 
-var validateValues = function() {
+	function validateValues() {
 	var id = $("eID").value;
 	var pass = $("pw").value;
 	var pass2 = $("pw2").value;
 	var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
 	var emailVal = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-	var email = $("em").value;
-
+	var email = $("email").value;
+	var sub = false;
 	if ($("eID").value === ""){
 		
 		$("iderror").innerHTML = "This field is required.";
@@ -45,8 +45,7 @@ var validateValues = function() {
 		$("iderror").innerHTML = "";
 		
 	}
-	
-	if ($("un").value === ""){
+	if ($("username").value === ""){
 		
 		$("unerror").innerHTML = "This field is required.";
 		
@@ -56,7 +55,6 @@ var validateValues = function() {
 		$("unerror").innerHTML = "";
 		
 	}
-	
 	if ($("fname").value === ""){
 		
 		$("fnerror").innerHTML = "This field is required.";
@@ -88,7 +86,7 @@ var validateValues = function() {
 	}
 	else {
 		
-		$("emailerror").innerHTML = "Please enter a valid e-mail address."
+		$("emailerror").innerHTML = "Please enter a valid e-mail address.";
 		
 	}
 
@@ -114,7 +112,14 @@ var validateValues = function() {
 		$("pwerror").innerHTML = "Password must be between 7 to 15 characters and contain at least one special character and one numerical digit.";
 		
 	}
-
+	
+	if ($("pwerror").innerHTML === "" && $("emerror").innerHTML === "" && $("lnerror").innerHTML === "" && $("fnerror").innerHTML === "" && $("unerror").innerHTML === "" && $("iderror").innerHTML === "") {
+		
+			sub = true;
+		
+	}
+	
+	return sub;
 
 };
 
@@ -134,7 +139,6 @@ $("pwerror").innerHTML = "*";
 $("pw2error").innerHTML = "*";
 $("fnerror").innerHTML = "*";
 $("lnerror").innerHTML = "*";
-$("submit").onclick = validateValues;
 $("resetform").onclick = resetForm;
 };
 
