@@ -15,12 +15,18 @@ $street_addr2 = filter_input(INPUT_POST, 'st2');
 $city = filter_input(INPUT_POST, 'city');
 $state = filter_input(INPUT_POST, 'state');
 $zip_code = filter_input(INPUT_POST, 'zip');
+$security_q1 = filter_input(INPUT_POST, 'security-q1');
+$security_ans1 = filter_input(INPUT_POST, 'security-q1-answer');
+$security_q2 = filter_input(INPUT_POST, 'security-q2');
+$security_ans2 = filter_input(INPUT_POST, 'security-q2-answer');
 
 //Execute the query
 $query = "INSERT INTO HR_Tables.Employee
-            (employeeID, firstName, lastName, username, password, phoneNumber, emailAddress) 
+            (employeeID, firstName, lastName, username, password, phoneNumber, emailAddress, 
+            securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2) 
         VALUES 
-            (:employeeID, :firstName, :lastName, :username, :password, :phoneNumber, :emailAddress)";
+            (:employeeID, :firstName, :lastName, :username, :password, :phoneNumber, :emailAddress,
+            :securityQuestion1, :securityAnswer1, :securityQuestion2, :securityAnswer2)";
 $statement = $conn->prepare($query);
 $statement->execute([
     'employeeID' => $employee_ID,
@@ -29,7 +35,11 @@ $statement->execute([
     'username' => $username,
     'password' => $password,
     'phoneNumber' => $phone_number,
-    'emailAddress' => $email
+    'emailAddress' => $email,
+    'securityQuestion1' => $security_q1,
+    'securityAnswer1' => $security_ans1,
+    'securityQuestion2' => $security_q2,
+    'securityAnswer2' => $security_ans2
 ]);
 $statement->closeCursor();
 
@@ -48,7 +58,7 @@ $statement2->execute([
 ]);
 $statement2->closeCursor();
 
-//Display the Registration Form (WILL CHANGE TO Confirmation Page) again 
+//Display the Confirmation Page 
 include('..\pages\RegConfirmation.html');
 
 ?>

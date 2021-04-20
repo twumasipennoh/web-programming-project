@@ -61,6 +61,10 @@ main #error-message {
 	color: red;
 }
 
+.error {
+	color:red;
+}
+
 body {
 	
 	font-family: Bahnschrift, sans-serif;
@@ -84,7 +88,12 @@ label {
 }
 
 #login input[type=submit]{
-	margin-left: 115px;
+	margin-left: 210px;
+}
+
+#forgot-password {
+	margin-top: -10px;
+	margin-left: 160px;
 }
 
 input[type=submit]{

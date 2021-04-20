@@ -4,6 +4,7 @@ require_once('database.php');
 // create a variable
 $username = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
+$error = "";
 
 //Execute the query
 $query = "SELECT * FROM HR_Tables.Employee

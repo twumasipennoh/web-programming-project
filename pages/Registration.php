@@ -51,6 +51,48 @@
 			<label for="zip">Zip Code:</label>
 			<input type="text" id="zip" name="zip"><br>
 
+			<label for="security-q1">Security Question 1: </label>
+			<select name="security-q1" id="security-q1">
+				<option value="What elementary school did you attend?">
+					What elementary school did you attend?
+				</option>
+				<option value="In what town or city was your first full time job?">
+					In what town or city was your first full time job?
+				</option>
+				<option value="In what town or city did you meet your spouse or partner?">
+					In what town or city did you meet your spouse or partner?
+				</option>
+				<option value="What was your childhood nickname?">
+					What was your childhood nickname?
+				</option>
+				<option value="What is your mother's middle name?">
+					What is your mother's middle name?
+				</option>
+			</select><br>
+			<label for="security-q1-answer">Answer: </label>
+			<input type="text" id="security-q1-answer" name="security-q1-answer"><span id ="sec-q1-error"></span><br>
+
+			<label for="security-q2">Security Question 2: </label>
+			<select name="security-q2" id="security-q2">
+				<option value="In what town or city did your parents meet?">
+					In what town or city did your parents meet?
+				</option>
+				<option value="What was the name of your first pet?">
+					What was the name of your first pet?
+				</option>
+				<option value="What is your favorite movie?">
+					What is your favorite movie?
+				</option>
+				<option value="What is the name of your favorite childhood friend?">
+					What is the name of your favorite childhood friend?
+				</option>
+				<option value="What city or town was your first job in?">
+					What city or town was your first job in?
+				</option>
+			</select><br>
+			<label for="security-q2-answer">Answer: </label>
+			<input type="text" id="security-q2-answer" name="security-q2-answer"><span id ="sec-q2-error"></span><br>
+
 			<input type="submit" id="submit" value="Submit">
 			<input type="button" id="resetform" value="Reset">
 		</form>

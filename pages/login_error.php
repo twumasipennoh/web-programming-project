@@ -33,6 +33,7 @@
 			<label for ="password">Password:</label>
 			<input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
 
+			<p id="forgot-password"><a style="text-decoration: none; color: red" href="../pages/password_reset.php">Forgot Password?</a></p>
 			<input type="submit" id="login-button" value="Login">
 		</form>
 	</main>

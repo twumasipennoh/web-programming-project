@@ -16,6 +16,8 @@ $("st2").value = "";
 $("city").value = "";
 $("state").value = "";
 $("zip").value = "";
+$("security-q1-answer").value = "";
+$("security-q2-answer").value = "";
 $("iderror").innerHTML = "*";
 $("emailerror").innerHTML = "*";
 $("unerror").innerHTML = "*";
@@ -23,8 +25,8 @@ $("pwerror").innerHTML = "*";
 $("pw2error").innerHTML = "*";
 $("fnerror").innerHTML = "*";
 $("lnerror").innerHTML = "*";
-	
-	
+$("sec-q1-error").innerHTML = "*";
+$("sec-q2-error").innerHTML = "*";
 };
 
 	function validateValues() {
@@ -34,11 +36,11 @@ $("lnerror").innerHTML = "*";
 	var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
 	var emailVal = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 	var email = $("email").value;
-	var sub = false;
+	var sub = true;
 	if ($("eID").value === ""){
 		
 		$("iderror").innerHTML = "This field is required.";
-		
+		sub = false;
 	}
 	else{
 		
@@ -48,7 +50,7 @@ $("lnerror").innerHTML = "*";
 	if ($("username").value === ""){
 		
 		$("unerror").innerHTML = "This field is required.";
-		
+		sub = false;
 	}
 	else{
 		
@@ -58,7 +60,7 @@ $("lnerror").innerHTML = "*";
 	if ($("fname").value === ""){
 		
 		$("fnerror").innerHTML = "This field is required.";
-		
+		sub = false;
 	}
 
 	else{
@@ -69,7 +71,7 @@ $("lnerror").innerHTML = "*";
 	if ($("lname").value === ""){
 		
 		$("lnerror").innerHTML = "This field is required.";
-		
+		sub = false;
 	}
 
 	else{
@@ -87,13 +89,13 @@ $("lnerror").innerHTML = "*";
 	else {
 		
 		$("emailerror").innerHTML = "Please enter a valid e-mail address.";
-		
+		sub = false;
 	}
 
 	if (pass !== pass2) {
 		
 		$("pw2error").innerHTML = "Both passwords must match";
-		
+		sub = false;
 	}
 	else {
 		
@@ -110,14 +112,30 @@ $("lnerror").innerHTML = "*";
 	else {
 		
 		$("pwerror").innerHTML = "Password must be between 7 to 15 characters and contain at least one special character and one numerical digit.";
-		
+		sub = false;
+	}
+
+	if ($("security-q1-answer").value === ""){
+		$("sec-q1-error").innerHTML = "This field is required.";
+		sub = false;	
+	}
+	else{
+		$("sec-q1-error").innerHTML = "";	
+	}
+
+	if ($("security-q2-answer").value === ""){
+		$("sec-q2-error").innerHTML = "This field is required.";	
+		sub = false;
+	}
+	else{
+		$("sec-q2-error").innerHTML = "";
 	}
 	
-	if ($("pwerror").innerHTML === "" && $("emerror").innerHTML === "" && $("lnerror").innerHTML === "" && $("fnerror").innerHTML === "" && $("unerror").innerHTML === "" && $("iderror").innerHTML === "") {
+	// if ($("pwerror").innerHTML === "" && $("emerror").innerHTML === "" && $("lnerror").innerHTML === "" && $("fnerror").innerHTML === "" && $("unerror").innerHTML === "" && $("iderror").innerHTML === "") {
 		
-			sub = true;
+	// 		sub = true;
 		
-	}
+	// }
 	
 	return sub;
 
@@ -131,6 +149,8 @@ $("pwerror").style.color = "red";
 $("pw2error").style.color = "red";
 $("fnerror").style.color = "red";
 $("lnerror").style.color = "red";
+$("sec-q1-error").style.color = "red";
+$("sec-q2-error").style.color = "red";
 
 $("iderror").innerHTML = "*";
 $("emailerror").innerHTML = "*";
@@ -139,6 +159,8 @@ $("pwerror").innerHTML = "*";
 $("pw2error").innerHTML = "*";
 $("fnerror").innerHTML = "*";
 $("lnerror").innerHTML = "*";
+$("sec-q1-error").innerHTML = "*";
+$("sec-q2-error").innerHTML = "*";
 $("resetform").onclick = resetForm;
 };
 
