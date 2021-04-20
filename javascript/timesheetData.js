@@ -1,16 +1,20 @@
 "use strict";
 
-var days = ["sun_", "mon_", "tues_", "wed_", "thur_", "fri_", "sat_"];
-var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 // var times = ["in", "lunch", "lunch_in", "out", "total"];
-var totalHours;
-
 var $ = function(id){
   return document.getElementById(id);
 };
 
+var days = ["sun_", "mon_", "tues_", "wed_", "thur_", "fri_", "sat_"];
+var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+var totalHours;
+
+
+// ************************************************************************************************
+// Timesheet Function
 var loadTimesheet = function(){
   // Load stuff from database to timesheet when page is loaded
+  var sun = $("startDate").innerHTML;
   var curr = new Date();
   var week = [];
 
@@ -20,11 +24,9 @@ var loadTimesheet = function(){
     week.push(day);
   }
 
-  $('startDate').innerHTML = week[0];
-  $('endDate').innerHTML = week[6];
-
   let splitDate = week[0].split("-");
   $("week").innerHTML = "Week of " + months[parseInt(splitDate[1])] + " " + splitDate[2];
+  // $("week").innerHTML = "Week of " + week[0];
 
   for (let i = 0; i < days.length; i++){
     splitDate = week[i].split("-");
@@ -32,6 +34,8 @@ var loadTimesheet = function(){
   }
 }
 
+// ************************************************************************************************
+// calcDayTotal Function
 var calcDayTotal = function(){
   totalHours = "0:0";
   for (let i = 0; i < days.length; i++){
@@ -57,7 +61,7 @@ var calcDayTotal = function(){
 
     var total = hours + ":" + mins.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
     if (!isNaN(hours) || !isNaN(mins)){
-      $(days[i] + "total").innerHTML = total;
+      $(days[i] + "total").value = total;
       addHours(total);
     } else {
       $(days[i] + "total").innerHTML = "N/A";
@@ -67,6 +71,9 @@ var calcDayTotal = function(){
   $("total_hours").innerHTML = "Total Hours: " + totalHours;
 }
 
+
+// ************************************************************************************************
+// addHours Function
 var addHours = function(hours){
   var splitTotal = totalHours.split(":");
   var splitNew = hours.split(":");
@@ -79,6 +86,8 @@ var addHours = function(hours){
   totalHours = h + ":" + m.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 }
 
+// ************************************************************************************************
+// Onload function
 window.onload = function(){
   loadTimesheet();
   $("save_button").onclick = function(){
