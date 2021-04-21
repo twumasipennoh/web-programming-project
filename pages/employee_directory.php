@@ -27,15 +27,31 @@
 
 <?php
 
+
 echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/dirCSS.css' />";
 require_once('../db_connection/database.php');
 
-$query = "SELECT * FROM HR_Tables.Employee";
-$employees = $conn->query($query);
+
 
 ?>
 <main>
 <h2>Employee Directory</h2>
+<p>Use the dropdown and the search bar to filter your results. To return to the full directory list after filtering, select 'None' in the dropdown and leave the searchbar blank.</p>
+
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" name="filter" method="POST">
+	<label for ="FilterBy">Filter directory by:</label>
+	<select name ="FilterBy">
+		<option value="nan">None</option>
+		<option value="title">Job Title</option>
+		<option value="firstname">First Name</option>
+		<option value="lastname">Last Name</option>
+	</select>
+	<label for ="search">Enter keyword to search within the filter you chose: </label>
+	<input type="text" name="search">
+	<input type="submit" name="fsubmit">
+</form>
+
+
 <table>
 <tr>
 	<th>First Name</th>
@@ -45,6 +61,45 @@ $employees = $conn->query($query);
 	<th></th>
 </tr>
 
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search']) && isset($_POST['FilterBy'])) {
+
+	if($_POST['FilterBy'] == 'title'){
+		$query = "SELECT * FROM HR_Tables.Employee WHERE jobTitle ='" . $_POST['search'] ."'";
+		$employees = $conn->query($query);
+
+
+	}
+	elseif($_POST['FilterBy'] == 'firstname'){
+		$query = "SELECT * FROM HR_Tables.Employee WHERE firstName ='" . $_POST['search']."'";
+		$employees = $conn->query($query);
+
+
+	}
+	elseif($_POST['FilterBy'] == 'lastname'){
+		$query = "SELECT * FROM HR_Tables.Employee WHERE lastName ='" . $_POST['search']."'";
+		$employees = $conn->query($query);
+
+
+	}
+	else{
+		
+		$query = "SELECT * FROM HR_Tables.Employee";
+		$employees = $conn->query($query);
+		
+	}
+
+}
+
+else {
+	$query = "SELECT * FROM HR_Tables.Employee";
+	$employees = $conn->query($query);
+	
+	
+}
+
+?>
 <?php foreach ($employees as $employee){?>
 <tr>
 	<td><?php echo $employee['firstName'];?></td>
@@ -57,7 +112,12 @@ $employees = $conn->query($query);
 			
 <?php }?>
 </table>
+<?php
 
+unset($_POST['FilterBy']);
+unset($_POST['search']);
+
+?>
 </main>
 <footer>
   <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
