@@ -1,3 +1,9 @@
+<?php  
+  if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+  }
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
