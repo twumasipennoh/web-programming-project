@@ -9,14 +9,14 @@
 
 <body>
 	<header>
-		<img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
-			<nav id="nav_menu">
-				<ul>
-					<li><a href="../pages/welcome_page.html">Home</a></li>
-          			<li><a href="../pages/registration.php" class="current">Register</a></li>
-          			<li><a href="../pages/login.php">Login</a></li>
-				</ul>
-			</nav>
+		<a href="../pages/welcome_page.html"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
+		<nav id="nav_menu">
+			<ul>
+				<li><a href="../pages/welcome_page.html">Home</a></li>
+				<li><a href="../pages/registration.php" class="current">Register</a></li>
+				<li><a href="../pages/login.php">Login</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<main>

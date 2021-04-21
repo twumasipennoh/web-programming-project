@@ -10,13 +10,13 @@
 
 <header>
 
-      <img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
+	<a href="../pages/user_home_page.php"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
 
       <nav id="nav_menu">
         <ul>
           <li><a href="../pages/user_home_page.php">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
-          <li><a href="../pages/requestPage.php">Requests</a></li>
+          <li><a href="../pages/requestPage.html">Requests</a></li>
           <li><a href="../pages/user_home_page.php">Pay Info</a></li>
 		  <li><a href="../pages/employee_directory.php" class="current">Employee Directory</a></li>
           <li><a href="../pages/user_home_page.php"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>

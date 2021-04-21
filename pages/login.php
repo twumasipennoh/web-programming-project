@@ -8,7 +8,7 @@
 
 <body>
 	<header>
-		<img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
+		<a href="../pages/welcome_page.html"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
 			<nav id="nav_menu">
 				<ul>
 					<li><a href="../pages/welcome_page.html">Home</a></li>
