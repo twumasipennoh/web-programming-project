@@ -63,8 +63,6 @@ var calcDayTotal = function(){
     if (!isNaN(hours) || !isNaN(mins)){
       $(days[i] + "total").value = total;
       addHours(total);
-    } else {
-      $(days[i] + "total").innerHTML = "N/A";
     }
   }
 

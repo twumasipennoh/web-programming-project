@@ -22,37 +22,37 @@
   }
 
   if (!isset($monShift)){
-    $monQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$monday'";
+    $monQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$monday'";
     $shifts = $conn -> query($monQuery);
     $monShift = $shifts -> fetch();
   }
 
   if (!isset($tuesShift)){
-    $tuesQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$tuesday'";
+    $tuesQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$tuesday'";
     $shifts = $conn -> query($tuesQuery);
     $tuesShift = $shifts -> fetch();
   }
 
   if (!isset($wedShift)){
-  $wedQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$wednesday'";
+  $wedQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$wednesday'";
   $shifts = $conn -> query($wedQuery);
   $wedShift = $shifts -> fetch();
   }
 
   if (!isset($thurShift)){
-  $thurQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$thursday'";
+  $thurQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$thursday'";
   $shifts = $conn -> query($thurQuery);
   $thurShift = $shifts -> fetch();
   }
 
   if (!isset($friShift)){
-  $friQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$friday'";
+  $friQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$friday'";
   $shifts = $conn -> query($friQuery);
   $friShift = $shifts -> fetch();
   }
 
   if (!isset($satShift)){
-    $satQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND HR_Tables.timesheetTable.date='$saturday'";
+    $satQuery = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$saturday'";
     $shifts = $conn -> query($satQuery);
     $satShift = $shifts -> fetch();
   }
@@ -122,7 +122,7 @@
               <td class="lunch"><input type="time" id="sun_lunch" name="sun_lunch" value="<?php if (!empty($sunShift)){ echo $sunShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="sun_lunch_in" name="sun_lunch_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="sun_out" name="sun_out" value="<?php if (!empty($sunShift)){ echo $sunShift['timeOut'];} ?>" ></td>
-              <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" disabled></td>
+              <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="monday">
               <th class="day">Monday</th>
@@ -131,7 +131,7 @@
               <td class="lunch"><input type="time" id="mon_lunch" name="mon_lunch" value="<?php if (!empty($monShift)){ echo $monShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="mon_lunch_in" name="mon_lunch_in" value="<?php if (!empty($monShift)){ echo $monShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="mon_out" name="mon_out" value="<?php if (!empty($monShift)){ echo $monShift['timeOut'];} ?>" ></td>
-              <td id="mon_total" class="total" name="mon_total"><?php if (!empty($monShift)){ echo $monShift['total'];} ?></td>
+              <td class="total"><input type="text" id="mon_total" name="mon_total" value="<?php if (!empty($monShift)){ echo $monShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="tuesday">
               <th class="day">Tuesday</th>
@@ -140,7 +140,7 @@
               <td class="lunch"><input type="time" id="tues_lunch" name="tues_lunch" value="<?php if (!empty($tuesShift)){ echo $tuesShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="tues_lunch_in" name="tues_lunch_in" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="tues_out" name="tues_out" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeOut'];} ?>" ></td>
-              <td id="tues_total" class="total" name="tues_total"><?php if (!empty($tuesShift)){ echo $tuesShift['total'];} ?></td>
+              <td class="total"><input type="text" id="tues_total" name="tues_total" value="<?php if (!empty($tuesShift)){ echo $tuesShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="wednesday">
               <th class="day">Wednesday</th>
@@ -149,7 +149,7 @@
               <td class="lunch"><input type="time" id="wed_lunch" name="wed_lunch" value="<?php if (!empty($wedShift)){ echo $wedShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="wed_lunch_in" name="wed_lunch_in" value="<?php if (!empty($wedShift)){ echo $wedShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="wed_out" name="wed_out" value="<?php if (!empty($wedShift)){ echo $wedShift['timeOut'];} ?>" ></td>
-              <td id="wed_total" class="total" name="wed_total"><?php if (!empty($wedShift)){ echo $wedShift['total'];} ?></td>
+              <td class="total"><input type="text" id="wed_total" name="wed_total" value="<?php if (!empty($wedShift)){ echo $wedShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="thursday">
               <th class="day">Thursday</th>
@@ -158,7 +158,7 @@
               <td class="lunch"><input type="time" id="thur_lunch" name="thur_lunch" value="<?php if (!empty($thurShift)){ echo $thurShift['lunch'];} ?>"></td>
               <td class="time_in_lunch"><input type="time" id="thur_lunch_in" name="thur_lunch_in" value="<?php if (!empty($thurShift)){ echo $thurShift['timeBack'];} ?>"></td>
               <td class="out"><input type="time" id="thur_out" name="thur_out" value="<?php if (!empty($thurShift)){ echo $thurShift['timeOut'];} ?>"></td>
-              <td id="thur_total" class="total" name="thur_total"><?php if (!empty($thurShift)){ echo $thurShift['total'];} ?></td>
+              <td class="total"><input type="text" id="thur_total" name="thur_total" value="<?php if (!empty($thurShift)){ echo $thurShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="friday">
               <th class="day">Friday</th>
@@ -166,8 +166,8 @@
               <td class="time_in"><input type="time" id="fri_in" name="fri_in" value="<?php if (!empty($friShift)){ echo $friShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="fri_lunch" name="fri_lunch" value="<?php if (!empty($friShift)){ echo $friShift['lunch'];} ?>"></td>
               <td class="time_in_lunch"><input type="time" id="fri_lunch_in" name="fri_lunch_in" value="<?php if (!empty($friShift)){ echo $friShift['timeBack'];} ?>"></td>
-              <td class="out"><input type="time" id="fri_out" name="fri_out" value="<?php if (!empty($friShift)){ echo $friShift['timeBack'];} ?>"></td>
-              <td id="fri_total" class="total" name="fri_total"><?php if (!empty($friShift)){ echo $friShift['total'];} ?></td>
+              <td class="out"><input type="time" id="fri_out" name="fri_out" value="<?php if (!empty($friShift)){ echo $friShift['timeOut'];} ?>"></td>
+              <td class="total"><input type="text" id="fri_total" name="fri_total" value="<?php if (!empty($friShift)){ echo $friShift['total'];} ?>" readonly></td>
             </tr>
             <tr class="saturday">
               <th class="day">Saturday</th>
@@ -175,8 +175,8 @@
               <td class="time_in"><input type="time" id="sat_in" name="sat_in" value="<?php if (!empty($satShift)){ echo $satShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="sat_lunch" name="sat_lunch" value="<?php if (!empty($satShift)){ echo $satShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="sat_lunch_in" name="sat_lunch_in" value="<?php if (!empty($satShift)){ echo $satShift['timeBack'];} ?>" ></td>
-              <td class="out"><input type="time" id="sat_out" name="sat_out" value="<?php if (!empty($satShift)){ echo $satShift['timeBack'];} ?>" ></td>
-              <td id="sat_total" class="total" name="sat_total"><?php if (!empty($satShift)){ echo $satShift['total'];} ?></td>
+              <td class="out"><input type="time" id="sat_out" name="sat_out" value="<?php if (!empty($satShift)){ echo $satShift['timeOut'];} ?>" ></td>
+              <td class="total"><input type="text" id="sat_total" name="sat_total" value="<?php if (!empty($satShift)){ echo $satShift['total'];} ?>" readonly></td>
             </tr>
           </tbody>
         </table>
