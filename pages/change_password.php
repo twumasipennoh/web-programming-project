@@ -69,5 +69,9 @@
 			<input style="margin-left: 335px;" type="submit" id="change-password" value="Submit">
         </form>
 	</main>
+
+	<footer>
+      <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
+    </footer>
 </body>
 </html>

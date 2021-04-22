@@ -36,5 +36,9 @@
 			<input style="margin-left: 445px;" type="submit" id="reset-button" value="Reset Password">
         </form>
 	</main>
+
+	<footer>
+      <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
+    </footer>
 </body>
 </html>

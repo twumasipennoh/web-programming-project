@@ -56,6 +56,10 @@
     <input type="submit" value="Submit request">
   </form>
 
+  <footer>
+      <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
+  </footer>
+
 </body>
 
 </html>

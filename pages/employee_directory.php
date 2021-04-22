@@ -37,6 +37,9 @@
 echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/dirCSS.css' />";
 require_once('../db_connection/database.php');
 
+if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+}
 
 
 ?>
@@ -44,7 +47,8 @@ require_once('../db_connection/database.php');
 <h2>Employee Directory</h2>
 <p>Use the dropdown and the search bar to filter your results. To return to the full directory list after filtering, select 'None' in the dropdown and leave the searchbar blank.</p>
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" name="filter" method="POST">
+<!-- <?php echo $_SERVER['PHP_SELF'];?> -->
+<form action="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>" name="filter" method="POST">
 	<label for ="FilterBy">Filter directory by:</label>
 	<select name ="FilterBy">
 		<option value="nan">None</option>
