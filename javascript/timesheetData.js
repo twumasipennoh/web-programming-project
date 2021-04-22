@@ -5,7 +5,7 @@ var $ = function(id){
   return document.getElementById(id);
 };
 
-var days = ["sun_", "mon_", "tues_", "wed_", "thur_", "fri_", "sat_"];
+var days = ["mon_", "tues_", "wed_", "thur_", "fri_", "sat_", "sun_"];
 var months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 var totalHours;
 
@@ -14,7 +14,7 @@ var totalHours;
 // Timesheet Function
 var loadTimesheet = function(){
   // Load stuff from database to timesheet when page is loaded
-  var sun = $("startDate").innerHTML;
+  // var sun = $("startDate").innerHTML;
   var curr = new Date();
   var week = [];
 
@@ -44,25 +44,39 @@ var calcDayTotal = function(){
     var lunchIn = $(days[i] + "lunch_in").value;
     var out = $(days[i] + "out").value;
 
-    var hours;
-    var mins;
-    var splitIn = timeIn.split(":");
-    var splitLunch = lunch.split(":");
-    var splitLunchIn = lunchIn.split(":");
-    var splitOut = out.split(":");
+    if (Date.parse('01/01/2020 ' + timeIn) < Date.parse('01/01/2020 ' + lunch) && Date.parse('01/01/2020 ' + lunch) < Date.parse('01/01/2020 ' + lunchIn) && Date.parse('01/01/2020 ' + lunchIn) < Date.parse('01/01/2020 ' + out)){
 
-    hours = (parseInt(splitOut[0]) - parseInt(splitIn[0])) - (parseInt(splitLunchIn[0]) - parseInt(splitLunch[0]));
-    mins = (parseInt(splitOut[1]) - parseInt(splitIn[1])) - (parseInt(splitLunchIn[1]) - parseInt(splitLunch[1]));
+      var hours;
+      var mins;
+      var splitIn = timeIn.split(":");
+      var splitLunch = lunch.split(":");
+      var splitLunchIn = lunchIn.split(":");
+      var splitOut = out.split(":");
 
-    if (mins < 0){
-      hours =  hours - Math.ceil(Math.abs(mins) / 60);
-      mins =  60 - (Math.abs(mins) % 60);
-    }
+      hours = (parseInt(splitOut[0]) - parseInt(splitIn[0])) - (parseInt(splitLunchIn[0]) - parseInt(splitLunch[0]));
+      mins = (parseInt(splitOut[1]) - parseInt(splitIn[1])) - (parseInt(splitLunchIn[1]) - parseInt(splitLunch[1]));
 
-    var total = hours + ":" + mins.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-    if (!isNaN(hours) || !isNaN(mins)){
-      $(days[i] + "total").value = total;
-      addHours(total);
+      if (mins < 0){
+        hours =  hours - Math.ceil(Math.abs(mins) / 60);
+        if ((mins % 60) != 0){
+          mins =  60 - (Math.abs(mins) % 60);
+        } else {
+          mins = 0;
+        }
+      }
+
+      if (mins > 0){
+        hours = hours + Math.floor(mins / 60);
+        mins = 0 + (mins % 60);
+      }
+
+      var total = hours + ":" + mins.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+      if (!isNaN(hours) || !isNaN(mins)){
+        $(days[i] + "total").value = total;
+        addHours(total);
+      }
+    } else {
+      $(days[i] + "total").value = "";
     }
   }
 
@@ -88,6 +102,7 @@ var addHours = function(hours){
 // Onload function
 window.onload = function(){
   loadTimesheet();
+  calcDayTotal();
   $("save_button").onclick = function(){
     calcDayTotal();
   };

@@ -6,13 +6,14 @@
   }
 
   // Get days shown in timesheet
-  $sunday = date('Y-m-d', strtotime('last sunday'));
-  $monday = date('Y-m-d', strtotime($sunday. '+1 day'));
-  $tuesday = date('Y-m-d', strtotime($sunday. '+2 days'));
-  $wednesday = date('Y-m-d', strtotime($sunday. '+3 days'));
-  $thursday = date('Y-m-d', strtotime($sunday. '+4 days'));
-  $friday = date('Y-m-d', strtotime($sunday. '+5 days'));
-  $saturday = date('Y-m-d', strtotime($sunday. '+6 days'));
+  $monday = date('Y-m-d', strtotime('last monday'));
+  $tuesday = date('Y-m-d', strtotime($monday. '+1 days'));
+  $wednesday = date('Y-m-d', strtotime($monday. '+2 days'));
+  $thursday = date('Y-m-d', strtotime($monday. '+3 days'));
+  $friday = date('Y-m-d', strtotime($monday. '+4 days'));
+  $saturday = date('Y-m-d', strtotime($monday. '+5 days'));
+  $sunday = date('Y-m-d', strtotime($monday. '+6 days'));
+
 
   // Get the shifts the employee has worked in the current week
   if (!isset($sunShift)){
@@ -63,17 +64,24 @@
     $return = $conn -> query($query2);
     $employee = $return -> fetch();
   }
+
+
+  // echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/timesheetStyles.css' />";
 ?>
+
 
 <!doctype html>
 
 <html lang="en">
   <head>
+    <style>
+      <?php include '../stylesheets/timesheetStyles.css'; ?>
+    </style>
     <meta charset="utf-8">
 
     <title>Artec</title>
     <link rel="shortcut icon" href="../images/logo_icon.ico">
-    <link rel="stylesheet" href="../stylesheets/timesheetStyles.css">
+    <!-- <link rel="stylesheet" href="../stylesheets/timesheetStyles.css" type="text/css"> -->
     <meta name="description" content="Computer Software Company">
     <script src="../javascript/timesheetData.js"></script>
   </head>
@@ -117,15 +125,6 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="sunday">
-              <th class="day">Sunday</th>
-              <td id="sun_date" class="date" name="sun_date"></td>
-              <td class="time_in"><input type="time" id="sun_in" name="sun_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeIn'];} ?>" ></td>
-              <td class="lunch"><input type="time" id="sun_lunch" name="sun_lunch" value="<?php if (!empty($sunShift)){ echo $sunShift['lunch'];} ?>" ></td>
-              <td class="time_in_lunch"><input type="time" id="sun_lunch_in" name="sun_lunch_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeBack'];} ?>" ></td>
-              <td class="out"><input type="time" id="sun_out" name="sun_out" value="<?php if (!empty($sunShift)){ echo $sunShift['timeOut'];} ?>" ></td>
-              <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" readonly></td>
-            </tr>
             <tr class="monday">
               <th class="day">Monday</th>
               <td id="mon_date" class="date" name="mon_date"></td>
@@ -179,6 +178,15 @@
               <td class="time_in_lunch"><input type="time" id="sat_lunch_in" name="sat_lunch_in" value="<?php if (!empty($satShift)){ echo $satShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="sat_out" name="sat_out" value="<?php if (!empty($satShift)){ echo $satShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="sat_total" name="sat_total" value="<?php if (!empty($satShift)){ echo $satShift['total'];} ?>" readonly></td>
+            </tr>
+            <tr class="sunday">
+              <th class="day">Sunday</th>
+              <td id="sun_date" class="date" name="sun_date"></td>
+              <td class="time_in"><input type="time" id="sun_in" name="sun_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeIn'];} ?>"></td>
+              <td class="lunch"><input type="time" id="sun_lunch" name="sun_lunch" value="<?php if (!empty($sunShift)){ echo $sunShift['lunch'];} ?>" ></td>
+              <td class="time_in_lunch"><input type="time" id="sun_lunch_in" name="sun_lunch_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeBack'];} ?>" ></td>
+              <td class="out"><input type="time" id="sun_out" name="sun_out" value="<?php if (!empty($sunShift)){ echo $sunShift['timeOut'];} ?>" ></td>
+              <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" readonly></td>
             </tr>
           </tbody>
         </table>
