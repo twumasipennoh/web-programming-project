@@ -1,0 +1,115 @@
+body {
+  font-family: Bahnschrift, sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1500px;
+  border: 1px solid black;
+  box-shadow: 5px 10px 8px black;
+}
+
+p,h1 {
+  padding: 0;
+  margin: 0;
+}
+
+/* ********************************************************************************************* */
+/* Main */
+
+.employee {
+  padding: 1em 2em;
+}
+
+
+/* ********************************************************************************************* */
+/* Header */
+header {
+    border-bottom: 2px solid black;
+    background-color: lightgrey;
+}
+
+#logo {
+  padding: .75rem;
+}
+
+#nav_menu {
+  float: right;
+}
+
+#nav_menu ul {
+  list-style-type: none;
+}
+
+#nav_menu ul li {
+  vertical-align: middle;
+  text-align: justify;
+  display: inline;
+  padding: 0em 1.5em 1em;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:visited {color: black; text-decoration: none;}
+nav a:hover, a:focus {color: gray;}
+
+#nav_menu ul li a.current {
+  text-decoration: underline;
+}
+
+/* ********************************************************************************************* */
+/* Table */
+table,th,td,input,h1 {
+  padding: 0;
+  margin: 0;
+}
+
+table input {
+  border: 0;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 2em auto;
+  box-shadow: 5px 5px 8px grey;
+}
+
+table caption {
+  font-size: 2em;
+  margin-bottom: .5em;
+  text-align: left;
+}
+
+th,td {
+  border: 1px solid lightgrey;
+  padding: .25em 0em;
+  text-align: center;
+}
+
+.total input {
+  max-width: 5em;
+  text-align: center;
+}
+
+.total_hours {
+  padding-left: 5em;
+}
+
+main #save_button {
+  padding: .25em 1em;
+  margin: 1em 7.5em;
+  font-size: 1rem;
+}
+
+
+/* ********************************************************************************************* */
+/* Footer */
+
+footer {
+  font-weight: lighter;
+  text-align: center;
+  padding: 1rem 0;
+}

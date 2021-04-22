@@ -81,7 +81,6 @@
 
     <title>Artec</title>
     <link rel="shortcut icon" href="../images/logo_icon.ico">
-    <!-- <link rel="stylesheet" href="../stylesheets/timesheetStyles.css" type="text/css"> -->
     <meta name="description" content="Computer Software Company">
     <script src="../javascript/timesheetData.js"></script>
   </head>
