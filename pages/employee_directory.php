@@ -23,7 +23,7 @@
 			<li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
 			<li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
 			<li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>">Requests</a></li>
-			<li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
+			<li><a href="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
 			<li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>" class="current">Employee Directory</a></li>
 			<li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
 			<li><a href="../pages/welcome_page.html">Log out</a></li>
@@ -37,6 +37,9 @@
 echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/dirCSS.css' />";
 require_once('../db_connection/database.php');
 
+if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+}
 
 
 ?>
@@ -44,7 +47,8 @@ require_once('../db_connection/database.php');
 <h2>Employee Directory</h2>
 <p>Use the dropdown and the search bar to filter your results. To return to the full directory list after filtering, select 'None' in the dropdown and leave the searchbar blank.</p>
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" name="filter" method="POST">
+<!-- <?php echo $_SERVER['PHP_SELF'];?> -->
+<form action="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>" name="filter" method="POST">
 	<label for ="FilterBy">Filter directory by:</label>
 	<select name ="FilterBy">
 		<option value="nan">None</option>

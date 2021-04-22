@@ -32,5 +32,9 @@
 			<input type="submit" id="login-button" value="Login">
 		</form>
 	</main>
+
+	<footer>
+      <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
+    </footer>
 </body>
 </html>

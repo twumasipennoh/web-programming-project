@@ -54,3 +54,12 @@ nav a:hover, a:focus {color: gray;}
 {
   text-decoration: underline;
 }
+
+/* Footer */
+footer {
+  /* color: white; */
+  font-weight: lighter;
+  text-align: center;
+  /* background-color: grey; */
+  padding: 1rem 0;
+}

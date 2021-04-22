@@ -62,3 +62,12 @@ padding: 5em 5em 20em;
 	
 	
 }
+
+/* Footer */
+footer {
+  /* color: white; */
+  font-weight: lighter;
+  text-align: center;
+  /* background-color: grey; */
+  padding: 1rem 0;
+}

@@ -109,8 +109,11 @@ main #save_button {
 /* ********************************************************************************************* */
 /* Footer */
 
+/* Footer */
 footer {
+  /* color: white; */
   font-weight: lighter;
   text-align: center;
+  /* background-color: grey; */
   padding: 1rem 0;
 }
