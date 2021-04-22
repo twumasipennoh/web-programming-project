@@ -28,12 +28,26 @@ $statement2->execute([
 ]);
 $result = $statement2->fetchAll();
 $statement2->closeCursor();
+
+$query3 = "SELECT emailAddress from HR_Tables.Employee WHERE emailAddress=:emailAddress";
+$statement3 = $conn->prepare($query3);
+$statement3->execute([
+    'emailAddress' => $email
+]);
+$result2 = $statement3->fetchAll();
+$statement3->closeCursor();
 if ($result) {
 	$username_error = "<span style='color:red'>The username you chose has already been taken.</span>";
-	echo "<span style='color:red'>The username you chose has already been taken.</span>";
 	include('../pages/Registration.php');
 }
+elseif ($result2) {
+	$email_error = "<span style='color:red'>The email you chose has already been taken.</span>";
+	echo "<span style='color:red'>The email you chose has already been taken.</span>";
+	include('../pages/Registration.php');	
+	
+}
 else{
+	echo "hi2";
 	$query = "INSERT INTO HR_Tables.Employee
 				(employeeID, firstName, lastName, username, password, phoneNumber, emailAddress, 
 				securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2) 

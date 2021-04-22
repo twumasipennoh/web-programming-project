@@ -22,6 +22,7 @@
 	<main>
 		<?php
 		$username_error = "";
+		$email_error = "";
 		?>
 		<h3>Employee Registration Portal</h3>
 		<p>Fields marked with an asterisk(*) are required.</p>
@@ -31,6 +32,10 @@
 			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
 			<label for="email">E-Mail:</label>
 			<input type="email" id ="email" name="email"><span id ="emailerror"></span><br>
+			<p id="error-email"><?php echo $email_error; 
+										$email_error = "";
+								  ?>
+			</p>
 			<label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 			<p id="error-message"><?php echo $username_error; 
