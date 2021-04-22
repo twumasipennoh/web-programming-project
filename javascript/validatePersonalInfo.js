@@ -12,6 +12,9 @@ function validatePersonalInfo() {
 	var emailVal = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 	var email = $("email").value;
 	var sub = true;
+
+	$("error-message").innerHTML = "";
+	$("success-message").innerHTML = "";
 	
 	if ($("username").value == ""){
 		$("unerror").innerHTML = " This field is required.";

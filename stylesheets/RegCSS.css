@@ -98,3 +98,12 @@ input[type=button]{
 	margin-left:150px;
 	margin-bottom:.5em;
 }
+
+/* Footer */
+footer {
+	/* color: white; */
+	font-weight: lighter;
+	text-align: center;
+	/* background-color: grey; */
+	padding: 1rem 0;
+  }
