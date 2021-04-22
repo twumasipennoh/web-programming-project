@@ -19,7 +19,7 @@
     // $shifts = $return2 -> fetch();
   }
 
-  $pay = 5;
+  $pay = $employee['wage'];
 ?>
 
 <!-- ******************************************************************************************* -->
@@ -58,12 +58,13 @@
 
     <main>
       <div class="employee">
-        <h1>Employee: <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
-        <h3>Title: <?php echo $employee['jobTitle']; ?></h3>
-        <h3>Employee ID: <?php echo $employeeID ?></h3>
+        <h1>Shifts Worked - <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
+        <?php if (!empty($pay)){?>
+          <h3>Hourly Wage: <?php echo $employee['wage']; ?></h3>
+        <?php } ?>
       </div>
       <table>
-        <caption>Shifts Worked</caption>
+        <!-- <caption>Search dates:<input type="date" name="searchStart"><input type="date" name="searchEnd"></caption> -->
         <thead>
           <tr>
             <th>Date</th>

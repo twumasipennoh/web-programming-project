@@ -1,4 +1,5 @@
-<?php  
+<?php
+  require_once('../db_connection/database.php');
 
   if (!isset($employeeID)){
     $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
