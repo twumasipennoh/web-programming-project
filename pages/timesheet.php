@@ -106,7 +106,6 @@
       <p id="endDate" hidden><?php echo $saturday ?></p>
       <div class="employee">
         <h1>Employee: <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
-        <h3>Title:<?php echo $employee['jobTitle']; ?></h3>
         <h3>Employee ID: <?php echo $employeeID ?></h3>
       </div>
       <form action="../db_connection/updateTimesheet.php?employeeID=<?php echo $employeeID ?>" method="post">
