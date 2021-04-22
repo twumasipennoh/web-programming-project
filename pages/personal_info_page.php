@@ -57,38 +57,78 @@
         <h3>Employee ID: <?php echo $employeeID ?></h3>
       </div>
 
-      <form id="change-personal-info" onsubmit="return validatePersonalInfo()" method="post">
+      <form id="change-personal-info" action="../db_connection/change_personal_info.php?employeeID=<?php echo $employeeID ?>" onsubmit="return validatePersonalInfo()" method="post">
         <div class="info">
+          <p style="color: red" id="error-message"><?php 
+                  if(isset($error) and $error != ""){
+                    echo $error;
+                    $error = "";
+                  }
+                  ?>
+          </p>
+          <p style="color: green" id="success-message">
+                <?php 
+                  if(isset($successful) and $successful != ""){
+                    echo $successful;
+                    $successful = "";
+                  }
+                ?>
+          </p>
           <h2>Change Basic Information</h2>
             <label for ="username">Username:</label>
-            <input type="text" name="username" id="username" value="<?php echo $employee['username']; ?>"><span id ="unerror"></span><br>
+            <input type="text" name="username" id="username" value="<?php echo $employee['username']; ?>">
+            <span class="error" id ="unerror">
+                <?php 
+                  if(isset($username_error) and $username_error != ""){
+                    echo $username_error;
+                    $username_error = "";
+                  }
+                ?>
+            </span><br>
 
             <label for="email">E-Mail:</label>
-            <input type="email" id ="email" name="email" value="<?php echo $employee['emailAddress']; ?>"><span id ="emailerror"></span><br>
+            <input type="email" id ="email" name="email" value="<?php echo $employee['emailAddress']; ?>">
+            <span style="color: red" class="error" id ="emailerror">
+                <?php 
+                  if(isset($email_error) and $email_error != ""){
+                    echo $email_error;
+                    $email_error = "";
+                  }
+                ?>
+            </span><br>
             
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" value="<?php echo $employee['phoneNumber']; ?>"><span id ="phoneerror"></span><br>
 
             <label for="st1">Street Address 1:</label>
-            <input type="text" id="st1" name="st1" value="<?php echo $address['streetAddress']; ?>"><span id ="streeterror"></span><br>
+            <input type="text" id="st1" name="st1" value="<?php echo $address['streetAddress']; ?>">
+            <span style="color: red" class="error" id ="streeterror">
+                <?php 
+                  if(isset($street_addr1_error) and $street_addr1_error != ""){
+                    echo $street_addr1_error;
+                    $street_addr1_error = "";
+                  }
+                ?>
+            </span><br>
 
             <label for="st2">Street Address 2:</label>
             <input type="text" id="st2" name="st2" value="<?php echo $address['streetAddress2']; ?>"><br>
 
             <label for="city">City:</label>
-            <input type="text" id="city" name="city" value="<?php echo $address['city']; ?>"><span id ="cityerror"></span><br>
+            <input type="text" id="city" name="city" value="<?php echo $address['city']; ?>"><span class="error" id ="cityerror"></span><br>
 
             <label for="state">State:</label>
-            <input type="text" id="state" name="state" value="<?php echo $address['state']; ?>"><span id ="stateerror"></span><br>
+            <input type="text" id="state" name="state" value="<?php echo $address['state']; ?>"><span class="error" id ="stateerror"></span><br>
 
             <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" name="zip" value="<?php echo $address['zipCode']; ?>"><span id ="zipCodeerror"></span><br>
+            <input type="text" id="zip" name="zip" value="<?php echo $address['zipCode']; ?>"><span class="error" id ="zipCodeerror"></span><br>
         </div>
 
         <div class="info">
           <h2>Change Security Questions</h2>
             <label for="security-q1">Security Question 1: </label>
             <select name="security-q1" id="security-q1">
+              <option value="" selected></option>
               <option value="What elementary school did you attend?">
                 What elementary school did you attend?
               </option>
@@ -106,10 +146,19 @@
               </option>
             </select><br>
             <label for="security-q1-answer">Answer: </label>
-            <input type="text" id="security-q1-answer" name="security-q1-answer"><span id ="sec-q1-error"></span><br>
+            <input type="text" id="security-q1-answer" name="security-q1-answer">
+            <span style="color: red" class="error" id ="sec-q1-error">
+                <?php 
+                  if(isset($security_q1_answer_error) and $security_q1_answer_error != ""){
+                    echo $security_q1_answer_error;
+                    $security_q1_answer_error = "";
+                  }
+                ?>
+            </span><br>
 
             <label for="security-q2">Security Question 2: </label>
             <select name="security-q2" id="security-q2">
+              <option value="" selected></option>
               <option value="In what town or city did your parents meet?">
                 In what town or city did your parents meet?
               </option>
@@ -127,19 +176,53 @@
               </option>
             </select><br>
             <label for="security-q2-answer">Answer: </label>
-            <input type="text" id="security-q2-answer" name="security-q2-answer"><span id ="sec-q2-error"></span><br>
+            <input type="text" id="security-q2-answer" name="security-q2-answer">
+            <span style="color: red" class="error" id ="sec-q2-error">
+                <?php 
+                  if(isset($security_q2_answer_error) and $security_q2_answer_error != ""){
+                    echo $security_q2_answer_error;
+                    $security_q2_answer_error = "";
+                  }
+                ?>
+            </span><br>
         </div>
 
         <div class="info">
           <h2>Change Password</h2>
             <label for ="current-password">Current Password:</label>
-            <input type="password" name="current-password" id="current-pw"><span id ="pwerror"></span><br>
-            <label for ="password">New Password:</label>
-            <input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
-            <label for ="password2">Confirm New Password:</label>
-            <input type="password" name="password2" id ="pw2"><span id ="pw2error"></span><br>
+            <input type="password" name="current-password" id="current-pw">
+            <span style="color: red" class="error" id ="current-pw-error">
+                <?php 
+                  if(isset($current_password_error) and $current_password_error != ""){
+                    echo $current_password_error;
+                    $current_password_error = "";
+                  }
+                ?>   
+            </span><br>
 
-            <input id="save-button" type="submit" id="submit" value="Save All Changes">
+            <label for ="password">New Password:</label>
+            <input type="password" name="password" id="pw">
+            <span style="color: red" class="error" id ="pwerror">
+                <?php 
+                  if(isset($password_error) and $password_error != ""){
+                    echo $password_error;
+                    $password_error = "";
+                  }
+                ?> 
+            </span><br>
+
+            <label for ="password2">Confirm New Password:</label>
+            <input type="password" name="password2" id ="pw2">
+            <span style="color: red" class="error" id ="pw2error">
+                <?php 
+                  if(isset($confirm_password_error) and $confirm_password_error != ""){
+                    echo $confirm_password_error;
+                    $confirm_password_error = "";
+                  }
+                ?> 
+            </span><br>
+
+            <input id="save-button" type="submit" value="Save All Changes">
         </div>
       </form>
     </main>
