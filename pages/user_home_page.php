@@ -1,5 +1,7 @@
 <?php
-
+  if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+  }
 ?>
 
 <!doctype html>
@@ -21,12 +23,12 @@
 
       <nav id="nav_menu">
         <ul>
-          <li><a href="../pages/user_home_page.php" class="current">Home</a></li>
+          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>" class="current">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
-          <li><a href="../pages/requestPage.html">Requests</a></li>
-          <li><a href="../pages/user_home_page.php">Pay Info</a></li>
-		      <li><a href="../pages/employee_directory.php">Employee Directory</a></li>
-          <li><a href="../pages/personal_info_page.php"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+          <li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>">Requests</a></li>
+          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
+		      <li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
+          <li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
         </ul>
       </nav>

@@ -9,17 +9,21 @@
 
 <body>
 	<header>
-		<a href="../pages/welcome_page.html"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
-		<nav id="nav_menu">
-			<ul>
-				<li><a href="../pages/welcome_page.html">Home</a></li>
-				<li><a href="../pages/registration.php" class="current">Register</a></li>
-				<li><a href="../pages/login.php">Login</a></li>
-			</ul>
-		</nav>
+		<img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
+			<nav id="nav_menu">
+				<ul>
+					<li><a href="../pages/welcome_page.html">Home</a></li>
+          			<li><a href="../pages/registration.php" class="current">Register</a></li>
+          			<li><a href="../pages/login.php">Login</a></li>
+				</ul>
+			</nav>
 	</header>
 
 	<main>
+		<?php
+		$username_error = "";
+		$email_error = "";
+		?>
 		<h3>Employee Registration Portal</h3>
 		<p>Fields marked with an asterisk(*) are required.</p>
 
@@ -28,8 +32,16 @@
 			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
 			<label for="email">E-Mail:</label>
 			<input type="email" id ="email" name="email"><span id ="emailerror"></span><br>
+			<p id="error-email"><?php echo $email_error; 
+										$email_error = "";
+								  ?>
+			</p>
 			<label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
+			<p id="error-message"><?php echo $username_error; 
+										$username_error = "";
+								  ?>
+			</p>
 			<label for ="password">Password:</label>
 			<input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
 			<label for ="password2">Confirm Password:</label>
@@ -99,3 +111,4 @@
 	</main>
 </body>
 </html>
+

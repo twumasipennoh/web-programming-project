@@ -1,3 +1,22 @@
+<?php  
+  require_once('../db_connection/database.php');
+
+  if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+  }
+
+  // Get the particular employee to get their info
+  if (!isset($employee)){
+    $query2 = "SELECT * FROM HR_Tables.Employee WHERE employeeID=$employeeID";
+    $return = $conn -> query($query2);
+    $employee = $return -> fetch();
+  }
+
+  $query3 = "SELECT * FROM HR_Tables.Address WHERE employeeID=$employeeID";
+  $return = $conn -> query($query3);
+  $address = $return -> fetch();
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -8,7 +27,7 @@
     <link rel="shortcut icon" href="../images/logo_icon.ico">
     <link rel="stylesheet" href="../stylesheets/personalInfoStyles.css">
     <meta name="description" content="Computer Software Company">
-    <script src="../javascript/timesheetData.js"></script>
+    <script src="../javascript/validatePersonalInfo.js"></script>
   </head>
   <body>
 
@@ -16,12 +35,12 @@
       <a href="../pages/user_home_page.php"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
       <nav id="nav_menu">
         <ul>
-          <li><a href="../pages/user_home_page.php">Home</a></li>
+          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
-          <li><a href="../pages/requestPage.html">Requests</a></li>
-          <li><a href="../pages/user_home_page.php">Pay Info</a></li>
-          <li><a href="../pages/employee_directory.php">Employee Directory</a></li>
-          <li><a href="../pages/personal_info_page.php"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+          <li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>">Requests</a></li>
+          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
+		      <li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
+          <li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
         </ul>
       </nav>
@@ -33,37 +52,37 @@
       </div>
 
       <div class="info">
-        <h2>Employee:</h1>
-        <h3>Title:</h3>
-        <h3>Employee ID:</h3>
+        <h2>Employee: <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h2>
+        <h3>Title: <?php echo $employee['jobTitle']; ?></h3>
+        <h3>Employee ID: <?php echo $employeeID ?></h3>
       </div>
 
-      <form>
+      <form id="change-personal-info" onsubmit="return validatePersonalInfo()" method="post">
         <div class="info">
           <h2>Change Basic Information</h2>
             <label for ="username">Username:</label>
-            <input type="text" name="username" id="username"><span id ="unerror"></span><br>
+            <input type="text" name="username" id="username" value="<?php echo $employee['username']; ?>"><span id ="unerror"></span><br>
 
             <label for="email">E-Mail:</label>
-            <input type="email" id ="email" name="email"><span id ="emailerror"></span><br>
+            <input type="email" id ="email" name="email" value="<?php echo $employee['emailAddress']; ?>"><span id ="emailerror"></span><br>
             
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone"><br>
+            <input type="tel" id="phone" name="phone" value="<?php echo $employee['phoneNumber']; ?>"><span id ="phoneerror"></span><br>
 
             <label for="st1">Street Address 1:</label>
-            <input type="text" id="st1" name="st1"><br>
+            <input type="text" id="st1" name="st1" value="<?php echo $address['streetAddress']; ?>"><span id ="streeterror"></span><br>
 
             <label for="st2">Street Address 2:</label>
-            <input type="text" id="st2" name="st2"><br>
+            <input type="text" id="st2" name="st2" value="<?php echo $address['streetAddress2']; ?>"><br>
 
             <label for="city">City:</label>
-            <input type="text" id="city" name="city"><br>
+            <input type="text" id="city" name="city" value="<?php echo $address['city']; ?>"><span id ="cityerror"></span><br>
 
             <label for="state">State:</label>
-            <input type="text" id="state" name="state"><br>
+            <input type="text" id="state" name="state" value="<?php echo $address['state']; ?>"><span id ="stateerror"></span><br>
 
             <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" name="zip"><br>
+            <input type="text" id="zip" name="zip" value="<?php echo $address['zipCode']; ?>"><span id ="zipCodeerror"></span><br>
         </div>
 
         <div class="info">
@@ -113,9 +132,11 @@
 
         <div class="info">
           <h2>Change Password</h2>
-            <label for ="password">Password:</label>
+            <label for ="current-password">Current Password:</label>
+            <input type="password" name="current-password" id="current-pw"><span id ="pwerror"></span><br>
+            <label for ="password">New Password:</label>
             <input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
-            <label for ="password2">Confirm Password:</label>
+            <label for ="password2">Confirm New Password:</label>
             <input type="password" name="password2" id ="pw2"><span id ="pw2error"></span><br>
 
             <input id="save-button" type="submit" id="submit" value="Save All Changes">
