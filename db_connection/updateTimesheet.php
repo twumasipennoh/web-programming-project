@@ -7,32 +7,25 @@
     $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT);
   }
 
-  // Sunday
-  $sunDate = date('Y-m-d', strtotime('last sunday'));
-  $sunIn = filter_input(INPUT_POST, 'sun_in');
-  $sunLunch = filter_input(INPUT_POST, 'sun_lunch');
-  $sunLunchIn = filter_input(INPUT_POST, 'sun_lunch_in');
-  $sunOut = filter_input(INPUT_POST, 'sun_out');
-  $sunTotal = filter_input(INPUT_POST, 'sun_total');
+  $monDate = date('Y-m-d', strtotime('last monday'));
+  $tuesDate = date('Y-m-d', strtotime($monDate. '+1 days'));
+  $wedDate = date('Y-m-d', strtotime($monDate. '+2 days'));
+  $thurDate = date('Y-m-d', strtotime($monDate. '+3 days'));
+  $friDate = date('Y-m-d', strtotime($monDate. '+4 days'));
+  $satDate = date('Y-m-d', strtotime($monDate. '+5 days'));
+  $sunDate = date('Y-m-d', strtotime($monDate. '+6 days'));
+  //
+  // echo $monDate;
+  // echo $tuesDate;
+  // echo $wedDate;
+  // echo $thurDate;
+  // echo $friDate;
+  // echo $satDate;
+  // echo $sunDate;
 
-  $qSun = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID = $employeeID AND `date` = '$sunDate'";
-  $res = $conn -> query($qSun);
-  $r = $res -> fetch();
-
-  if ($sunDate == null || $sunIn == null || $sunLunch == null || $sunLunchIn == null || $sunOut == null || $sunTotal == null){
-
-  } else {
-    if (empty($r)){
-      $query = "INSERT INTO  HR_Tables.timesheetTable (employeeID, date, timeIn, lunch, timeBack, timeOut, total) SELECT $employeeID, '$sunDate', '$sunIn', '$sunLunch', '$sunLunchIn', '$sunOut', '$sunTotal' WHERE NOT EXISTS (SELECT * FROM HR_Tables.timesheetTable WHERE employeeID = $employeeID AND `date` = '$sunDate' LIMIT 1)";
-      $row = $conn -> exec($query);
-    } else {
-      $query = "UPDATE HR_Tables.timesheetTable SET timeIn='$sunIn', lunch='$sunLunch', timeBack='$sunLunchIn', timeOut='$sunOut', total='$sunTotal' WHERE employeeID=$employeeID AND `date`='$sunDate'";
-      $row = $conn -> exec($query);
-    }
-  }
 
   // Monday
-  $monDate = date('Y-m-d', strtotime($sunDate . '+1 day'));
+  // $monDate = date('Y-m-d', strtotime('last monday'));
   $monIn = filter_input(INPUT_POST, 'mon_in');
   $monLunch = filter_input(INPUT_POST, 'mon_lunch');
   $monLunchIn = filter_input(INPUT_POST, 'mon_lunch_in');
@@ -57,7 +50,7 @@
 
 
   // Tuesday
-  $tuesDate = date('Y-m-d', strtotime($sunDate . '+2 days'));
+  // $tuesDate = date('Y-m-d', strtotime($monDate. '+1 days'));
   $tuesIn = filter_input(INPUT_POST, 'tues_in');
   $tuesLunch = filter_input(INPUT_POST, 'tues_lunch');
   $tuesLunchIn = filter_input(INPUT_POST, 'tues_lunch_in');
@@ -82,7 +75,7 @@
 
 
   // Wednesday
-  $wedDate = date('Y-m-d', strtotime($sunDate . '+3 days'));
+  // $wedDate = date('Y-m-d', strtotime($monDate. '+2 days'));
   $wedIn = filter_input(INPUT_POST, 'wed_in');
   $wedLunch = filter_input(INPUT_POST, 'wed_lunch');
   $wedLunchIn = filter_input(INPUT_POST, 'wed_lunch_in');
@@ -107,7 +100,7 @@
 
 
   // Thursday
-  $thurDate = date('Y-m-d', strtotime($sunDate . '+4 days'));
+  // $thurDate = date('Y-m-d', strtotime($monDate. '+3 days'));
   $thurIn = filter_input(INPUT_POST, 'thur_in');
   $thurLunch = filter_input(INPUT_POST, 'thur_lunch');
   $thurLunchIn = filter_input(INPUT_POST, 'thur_lunch_in');
@@ -132,7 +125,7 @@
 
 
   // Friday
-  $friDate = date('Y-m-d', strtotime($sunDate . '+5 days'));
+  // $friDate = date('Y-m-d', strtotime($monDate. '+4 days'));
   $friIn = filter_input(INPUT_POST, 'fri_in');
   $friLunch = filter_input(INPUT_POST, 'fri_lunch');
   $friLunchIn = filter_input(INPUT_POST, 'fri_lunch_in');
@@ -157,7 +150,7 @@
 
 
   // Saturday
-  $satDate = date('Y-m-d', strtotime($sunDate . '+6 days'));
+  // $satDate = date('Y-m-d', strtotime($monDate. '+5 days'));
   $satIn = filter_input(INPUT_POST, 'sat_in');
   $satLunch = filter_input(INPUT_POST, 'sat_lunch');
   $satLunchIn = filter_input(INPUT_POST, 'sat_lunch_in');
@@ -177,6 +170,30 @@
     } else {
       $query7 = "UPDATE HR_Tables.timesheetTable SET timeIn='$satIn', lunch='$satLunch', timeBack='$satLunchIn', timeOut='$satOut', total='$satTotal' WHERE employeeID=$employeeID AND `date`='$satDate'";
       $row7 = $conn -> exec($query7);
+    }
+  }
+
+  // Sunday
+  // $sunDate = date('Y-m-d', strtotime($monDate. '+6 days'));
+  $sunIn = filter_input(INPUT_POST, 'sun_in');
+  $sunLunch = filter_input(INPUT_POST, 'sun_lunch');
+  $sunLunchIn = filter_input(INPUT_POST, 'sun_lunch_in');
+  $sunOut = filter_input(INPUT_POST, 'sun_out');
+  $sunTotal = filter_input(INPUT_POST, 'sun_total');
+
+  $qSun = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID = $employeeID AND `date` = '$sunDate'";
+  $res = $conn -> query($qSun);
+  $r = $res -> fetch();
+
+  if ($sunDate == null || $sunIn == null || $sunLunch == null || $sunLunchIn == null || $sunOut == null || $sunTotal == null){
+
+  } else {
+    if (empty($r)){
+      $query = "INSERT INTO  HR_Tables.timesheetTable (employeeID, date, timeIn, lunch, timeBack, timeOut, total) SELECT $employeeID, '$sunDate', '$sunIn', '$sunLunch', '$sunLunchIn', '$sunOut', '$sunTotal' WHERE NOT EXISTS (SELECT * FROM HR_Tables.timesheetTable WHERE employeeID = $employeeID AND `date` = '$sunDate' LIMIT 1)";
+      $row = $conn -> exec($query);
+    } else {
+      $query = "UPDATE HR_Tables.timesheetTable SET timeIn='$sunIn', lunch='$sunLunch', timeBack='$sunLunchIn', timeOut='$sunOut', total='$sunTotal' WHERE employeeID=$employeeID AND `date`='$sunDate'";
+      $row = $conn -> exec($query);
     }
   }
 
