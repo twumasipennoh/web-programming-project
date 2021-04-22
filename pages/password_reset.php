@@ -30,10 +30,10 @@
 							  ?>
 		</p>
 		<form id="reset-password" action="..\db_connection\reset_password.php" method="post" onsubmit="return validateResetPasswordForm()">
-			<label style="width: 210px;" for ="username/email">Username or Email Address:</label>
+			<label style="width: 210px; margin-left: 130px;" for ="username/email">Username or Email Address:</label>
 			<input type="text" name="username/email" id="username/email"><span id ="unerror"></span><br>
 
-			<input style="margin-left: 335px;" type="submit" id="reset-button" value="Reset Password">
+			<input style="margin-left: 445px;" type="submit" id="reset-button" value="Reset Password">
         </form>
 	</main>
 </body>

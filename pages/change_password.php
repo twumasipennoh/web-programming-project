@@ -39,8 +39,8 @@
 								}
 							  ?>
 		</p>
-		<form id="change-password" action="..\db_connection\change_password_db.php" method="post" onsubmit="return validateChangePasswordForm()">
-			<label style="width: 450px; text-align: left;">Security Question 1: <?php 
+		<form style="margin-left: 140px;" id="change-password" action="..\db_connection\change_password_db.php" method="post" onsubmit="return validateChangePasswordForm()">
+			<label style="width: 500px; text-align: left;">Security Question 1: <?php 
 											if(isset($securityQuestion1)){
 												echo $securityQuestion1;
 											} 
@@ -49,7 +49,7 @@
 			<label style="width: 210px;" for="security_ans1">Answer: </label>
 			<input type="text" name="security_ans1" id="security_ans1"><span id ="security_ans1_error" class="error"></span><br>
 
-			<label style="width: 450px; text-align: left;">Security Question 2: <?php 
+			<label style="width: 500px; text-align: left;">Security Question 2: <?php 
 											if(isset($securityQuestion2)){
 												echo $securityQuestion2;
 											}; 
