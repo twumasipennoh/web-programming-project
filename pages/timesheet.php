@@ -93,7 +93,7 @@
           <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>" class="current">Timesheet</a></li>
           <li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>">Requests</a></li>
-          <li><a href="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
+          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
 		      <li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
           <li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
@@ -106,7 +106,7 @@
       <p id="endDate" hidden><?php echo $saturday ?></p>
       <div class="employee">
         <h1>Employee: <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
-        <h3>Title:<?php echo $employee['jobTitle']; ?></h3>
+        <h3>Title: <?php echo $employee['jobTitle']; ?></h3>
         <h3>Employee ID: <?php echo $employeeID ?></h3>
       </div>
       <form action="../db_connection/updateTimesheet.php?employeeID=<?php echo $employeeID ?>" method="post">
