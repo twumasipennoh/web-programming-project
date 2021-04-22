@@ -22,7 +22,7 @@ function validatePersonalInfo() {
 	}
 
 	if (email != "" && emailVal.test(email)) {
-		$("emerror").innerHTML = "";
+		$("emailerror").innerHTML = "";
 	}
 	else {
 		$("emailerror").innerHTML = " Please enter a valid e-mail address.";
@@ -53,7 +53,7 @@ function validatePersonalInfo() {
 		$("stateerror").innerHTML = "";
 	}
 
-	if($("zipCode").value == ""){
+	if($("zip").value == ""){
 		$("zipCodeerror").innerHTML = " This field is required.";
 		sub = false;
 	} 
