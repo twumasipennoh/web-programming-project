@@ -67,7 +67,6 @@ table,th,td,input,h1 {
 }
 
 table input {
-  /* border: 0; */
   margin: 0 1em;
 }
 
@@ -90,30 +89,13 @@ th,td {
   text-align: center;
 }
 
-.total input {
-  max-width: 5em;
-  text-align: center;
-}
-
-.total_hours {
-  padding-left: 5em;
-}
-
-main #save_button {
-  padding: .25em 1em;
-  margin: 1em 7.5em;
-  font-size: 1rem;
-}
 
 
 /* ********************************************************************************************* */
 /* Footer */
 
-/* Footer */
 footer {
-  /* color: white; */
   font-weight: lighter;
   text-align: center;
-  /* background-color: grey; */
   padding: 1rem 0;
 }

@@ -64,7 +64,7 @@
         <?php } ?>
       </div>
       <table>
-        <caption>Search dates:<input type="date" name="searchStart"><input type="date" name="searchEnd"></caption>
+        <!-- <caption>Search dates:<input type="date" name="searchStart"><input type="date" name="searchEnd"></caption> -->
         <thead>
           <tr>
             <th>Date</th>
