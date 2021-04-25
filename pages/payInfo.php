@@ -12,13 +12,6 @@
     $employee = $return -> fetch();
   }
 
-  // Get all the shift the employee has worked
-  if (!isset($shifts)){
-    $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
-    $shifts = $conn -> query($q2);
-    // $shifts = $return2 -> fetch();
-  }
-
   $pay = $employee['wage'];
 ?>
 
@@ -64,7 +57,11 @@
         <?php } ?>
       </div>
       <table>
-        <!-- <caption>Search dates:<input type="date" name="searchStart"><input type="date" name="searchEnd"></caption> -->
+        <form action="../db_connection/payInfo.php?employeeID=<?php echo $employeeID ?>" method="post">
+          <caption>Search dates:<input type="date" name="searchStart">-<input type="date" name="searchEnd">
+          <input type="submit" name="search" value="Search">
+          </caption>
+        </form>
         <thead>
           <tr>
             <th>Date</th>
@@ -73,6 +70,42 @@
           </tr>
         </thead>
         <tbody>
+          <?php
+            $startDate = filter_input(INPUT_POST, 'searchStart');
+            $endDate = filter_input(INPUT_POST, 'searchEnd');
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($startDate) || isset($endDate))){
+              if (!empty($startDate) && empty($endDate)){
+                $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$startDate'";
+                $shifts = $conn -> query($query);
+              } else if (empty($startDate) && !empty($endDate)){
+                $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$endDate'";
+                $shifts = $conn -> query($query);
+              } else if (!empty($startDate) && !empty($endDate)){
+                $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND (`date` BETWEEN '$startDate' AND '$endDate')";
+                $shifts = $conn -> query($query);
+              }
+            } else {
+              $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
+              $shifts = $conn -> query($q2);
+            }
+
+
+
+
+
+
+
+            // Get all the shift the employee has worked
+            // if (!isset($shifts)){
+            //   $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
+            //   $shifts = $conn -> query($q2);
+            //   // $shifts = $return2 -> fetch();
+            // }
+          ?>
+
+
+
           <?php foreach ($shifts as $shift){?>
             <tr>
               <td><?php echo $shift['date']; ?></td>
