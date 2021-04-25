@@ -53,11 +53,11 @@
       <div class="employee">
         <h1>Shifts Worked - <?php echo $employee['firstName'] . " " . $employee['lastName']; ?></h1>
         <?php if (!empty($pay)){?>
-          <h3>Hourly Wage: <?php echo $employee['wage']; ?></h3>
+          <h3>Hourly Wage: $<?php echo $employee['wage']; ?></h3>
         <?php } ?>
       </div>
       <table>
-        <form action="../db_connection/payInfo.php?employeeID=<?php echo $employeeID ?>" method="post">
+        <form action="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>" method="post">
           <caption>Search dates:<input type="date" name="searchStart">-<input type="date" name="searchEnd">
           <input type="submit" name="search" value="Search">
           </caption>
@@ -84,24 +84,14 @@
               } else if (!empty($startDate) && !empty($endDate)){
                 $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND (`date` BETWEEN '$startDate' AND '$endDate')";
                 $shifts = $conn -> query($query);
+              } else {
+                $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
+                $shifts = $conn -> query($q2);
               }
             } else {
               $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
               $shifts = $conn -> query($q2);
             }
-
-
-
-
-
-
-
-            // Get all the shift the employee has worked
-            // if (!isset($shifts)){
-            //   $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
-            //   $shifts = $conn -> query($q2);
-            //   // $shifts = $return2 -> fetch();
-            // }
           ?>
 
 
