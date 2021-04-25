@@ -1,3 +1,11 @@
+<?php
+  require_once('../db_connection/database.php');
+
+  if (!isset($employeeID)){
+    $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
+  }
+?>
+
  <!doctype html>
 
  <html lang="en">
@@ -16,11 +24,11 @@
        <img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
        <nav id="nav_menu">
          <ul>
-           <li><a href="../pages/admin_home_page.html">Home</a></li>
+           <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>">Home</a></li>
            <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>" class="current">Timesheet</a></li>
-           <li><a href="../pages/requestPage.html">Requests</a></li>
-           <li><a href="../pages/admin_home_page.html">Pay Info</a></li>
-           <li><a href="../pages/admin_home_page.html"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+           <li><a href="../pages/requestPage.php?<?php echo $employeeID ?>">Requests</a></li>
+           <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>">Pay Info</a></li>
+           <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
          </ul>
        </nav>
      </header>
