@@ -1,40 +1,37 @@
 body {
   font-family: Bahnschrift, sans-serif;
-  /*padding: 0 15px 10px 15px ;*/
   padding: 0;
   margin: 0 auto;
   max-width: 1500px;
-  /* text-align: center; */
+  border: 1px solid black;
+  box-shadow: 5px 10px 8px black;
 }
 
-p,h1 {
+table,th,td,input,p,h1{
   padding: 0;
-  margin: 2px;
+  margin: 0;
 }
 
-header
-{
+/* ********************************************************************************************* */
+/* Header */
+header {
     border-bottom: 2px solid black;
     background-color: lightgrey;
 }
-textarea{font-size: 18px}
-#logo
-{
+
+#logo {
   padding: .75rem;
 }
 
-#nav_menu
-{
+#nav_menu {
   float: right;
 }
 
-#nav_menu ul
- {
+#nav_menu ul {
   list-style-type: none;
 }
 
-#nav_menu ul li
-{
+#nav_menu ul li {
   vertical-align: middle;
   text-align: justify;
   display: inline;
@@ -42,24 +39,72 @@ textarea{font-size: 18px}
   text-decoration: none;
 }
 
-nav a
-{
+nav a {
   text-decoration: none;
+  color: black;
 }
 
 nav a:visited {color: black; text-decoration: none;}
 nav a:hover, a:focus {color: gray;}
 
-#nav_menu ul li a.current
-{
+#nav_menu ul li a.current {
   text-decoration: underline;
 }
 
+/* ********************************************************************************************* */
+/* Main */
+.new_request, .request_table {
+  float: left;
+}
+
+.new_request {
+  width: 30%;
+  padding: 2em 2em;
+}
+
+/* ********************************************************************************************* */
+/* Table */
+.request_table {
+  width: 65%;
+  padding: 6em 0em 3em;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 2em auto;
+  box-shadow: 5px 5px 8px grey;
+}
+
+table caption {
+  font-size: 2em;
+  margin-bottom: .5em;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid lightgrey;
+  padding: .25em 0em;
+  text-align: center;
+}
+
+table .request {
+  width: 70%;
+}
+
+table .left {
+  text-align: left;
+  padding: .25em 1em;
+}
+
+
+/* ********************************************************************************************* */
 /* Footer */
 footer {
   /* color: white; */
   font-weight: lighter;
   text-align: center;
+  clear: both;
   /* background-color: grey; */
   padding: 1rem 0;
 }

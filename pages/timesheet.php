@@ -131,7 +131,7 @@
               <td class="out"><input type="time" id="mon_out" name="mon_out" value="<?php if (!empty($monShift)){ echo $monShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="mon_total" name="mon_total" value="<?php if (!empty($monShift)){ echo $monShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $monday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $monday; ?>'">
               </td>
             </tr>
             <tr class="tuesday">
@@ -143,7 +143,7 @@
               <td class="out"><input type="time" id="tues_out" name="tues_out" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="tues_total" name="tues_total" value="<?php if (!empty($tuesShift)){ echo $tuesShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $tuesday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $tuesday; ?>'">
               </td>
             </tr>
             <tr class="wednesday">
@@ -155,7 +155,7 @@
               <td class="out"><input type="time" id="wed_out" name="wed_out" value="<?php if (!empty($wedShift)){ echo $wedShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="wed_total" name="wed_total" value="<?php if (!empty($wedShift)){ echo $wedShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $wednesday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $wednesday; ?>'">
               </td>
             </tr>
             <tr class="thursday">
@@ -167,7 +167,7 @@
               <td class="out"><input type="time" id="thur_out" name="thur_out" value="<?php if (!empty($thurShift)){ echo $thurShift['timeOut'];} ?>"></td>
               <td class="total"><input type="text" id="thur_total" name="thur_total" value="<?php if (!empty($thurShift)){ echo $thurShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $thursday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $thursday; ?>'">
               </td>
             </tr>
             <tr class="friday">
@@ -179,7 +179,7 @@
               <td class="out"><input type="time" id="fri_out" name="fri_out" value="<?php if (!empty($friShift)){ echo $friShift['timeOut'];} ?>"></td>
               <td class="total"><input type="text" id="fri_total" name="fri_total" value="<?php if (!empty($friShift)){ echo $friShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $friday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $friday; ?>'">
               </td>
             </tr>
             <tr class="saturday">
@@ -191,7 +191,7 @@
               <td class="out"><input type="time" id="sat_out" name="sat_out" value="<?php if (!empty($satShift)){ echo $satShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="sat_total" name="sat_total" value="<?php if (!empty($satShift)){ echo $satShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $saturday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $saturday; ?>'">
               </td>
             </tr>
             <tr class="sunday">
@@ -203,7 +203,7 @@
               <td class="out"><input type="time" id="sun_out" name="sun_out" value="<?php if (!empty($sunShift)){ echo $sunShift['timeOut'];} ?>" ></td>
               <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" readonly></td>
               <td>
-                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $sunday; ?>'">
+                <input class="button" type="button" value="Clear" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $sunday; ?>'">
               </td>
             </tr>
           </tbody>
