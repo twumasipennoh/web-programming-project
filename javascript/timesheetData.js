@@ -25,19 +25,19 @@ var loadTimesheet = function(){
   }
 
   let splitDate = week[0].split("-");
-  $("week").innerHTML = "Week of " + months[parseInt(splitDate[1])] + " " + splitDate[2];
+  $("week").innerHTML = "Week of " + months[parseInt(splitDate[1]) - 1] + " " + splitDate[2];
   // $("week").innerHTML = "Week of " + week[0];
 
   for (let i = 0; i < days.length; i++){
     splitDate = week[i].split("-");
-    $(days[i] + "date").innerHTML = months[parseInt(splitDate[1])] + " " + splitDate[2];
+    $(days[i] + "date").innerHTML = months[parseInt(splitDate[1]) - 1] + " " + splitDate[2];
   }
 }
 
 // ************************************************************************************************
 // calcDayTotal Function
 var calcDayTotal = function(){
-  totalHours = "0:0";
+  totalHours = "0:00";
   for (let i = 0; i < days.length; i++){
     var timeIn = $(days[i] + "in").value;
     var lunch = $(days[i] + "lunch").value;
@@ -76,7 +76,7 @@ var calcDayTotal = function(){
         addHours(total);
       }
     } else {
-      $(days[i] + "total").value = "";
+      $(days[i] + "total").value = "0:00";
     }
   }
 
@@ -101,7 +101,7 @@ var addHours = function(hours){
 // ************************************************************************************************
 // Onload function
 window.onload = function(){
-  loadTimesheet();
+  // loadTimesheet();
   calcDayTotal();
   $("save_button").onclick = function(){
     calcDayTotal();

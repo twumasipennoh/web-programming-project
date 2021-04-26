@@ -7,22 +7,13 @@
     $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT);
   }
 
-  $monDate = date('Y-m-d', strtotime('last monday'));
+  $monDate = date('Y-m-d', strtotime('monday this week'));
   $tuesDate = date('Y-m-d', strtotime($monDate. '+1 days'));
   $wedDate = date('Y-m-d', strtotime($monDate. '+2 days'));
   $thurDate = date('Y-m-d', strtotime($monDate. '+3 days'));
   $friDate = date('Y-m-d', strtotime($monDate. '+4 days'));
   $satDate = date('Y-m-d', strtotime($monDate. '+5 days'));
   $sunDate = date('Y-m-d', strtotime($monDate. '+6 days'));
-  //
-  // echo $monDate;
-  // echo $tuesDate;
-  // echo $wedDate;
-  // echo $thurDate;
-  // echo $friDate;
-  // echo $satDate;
-  // echo $sunDate;
-
 
   // Monday
   // $monDate = date('Y-m-d', strtotime('last monday'));

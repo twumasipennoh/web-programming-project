@@ -6,7 +6,7 @@
   }
 
   // Get days shown in timesheet
-  $monday = date('Y-m-d', strtotime('last monday'));
+  $monday = date('Y-m-d', strtotime('monday this week'));
   $tuesday = date('Y-m-d', strtotime($monday. '+1 days'));
   $wednesday = date('Y-m-d', strtotime($monday. '+2 days'));
   $thursday = date('Y-m-d', strtotime($monday. '+3 days'));
@@ -64,9 +64,6 @@
     $return = $conn -> query($query2);
     $employee = $return -> fetch();
   }
-
-
-  // echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/timesheetStyles.css' />";
 ?>
 
 
@@ -111,7 +108,7 @@
       </div>
       <form action="../db_connection/updateTimesheet.php?employeeID=<?php echo $employeeID ?>" method="post">
         <table>
-          <caption id="week">Week of</caption>
+          <caption id="week">Week of <?php echo date_format(date_create($monday), 'F jS, Y'); ?></caption>
           <thead>
             <tr>
               <th>Day</th>
@@ -121,71 +118,93 @@
               <th>Lunch End</th>
               <th>Time Out</th>
               <th>Hours Worked</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr class="monday">
               <th class="day">Monday</th>
-              <td id="mon_date" class="date" name="mon_date"></td>
+              <td id="mon_date" class="date" name="mon_date"><?php echo date_format(date_create($monday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="mon_in" name="mon_in" value="<?php if (!empty($monShift)){ echo $monShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="mon_lunch" name="mon_lunch" value="<?php if (!empty($monShift)){ echo $monShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="mon_lunch_in" name="mon_lunch_in" value="<?php if (!empty($monShift)){ echo $monShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="mon_out" name="mon_out" value="<?php if (!empty($monShift)){ echo $monShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="mon_total" name="mon_total" value="<?php if (!empty($monShift)){ echo $monShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $monday; ?>'">
+              </td>
             </tr>
             <tr class="tuesday">
               <th class="day">Tuesday</th>
-              <td id="tues_date" class="date" name="tues_date"></td>
+              <td id="tues_date" class="date" name="tues_date"><?php echo date_format(date_create($tuesday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="tues_in" name="tues_in" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="tues_lunch" name="tues_lunch" value="<?php if (!empty($tuesShift)){ echo $tuesShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="tues_lunch_in" name="tues_lunch_in" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="tues_out" name="tues_out" value="<?php if (!empty($tuesShift)){ echo $tuesShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="tues_total" name="tues_total" value="<?php if (!empty($tuesShift)){ echo $tuesShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $tuesday; ?>'">
+              </td>
             </tr>
             <tr class="wednesday">
               <th class="day">Wednesday</th>
-              <td id="wed_date" class="date" name="wed_date"></td>
+              <td id="wed_date" class="date" name="wed_date"><?php echo date_format(date_create($wednesday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="wed_in" name="wed_in" value="<?php if (!empty($wedShift)){ echo $wedShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="wed_lunch" name="wed_lunch" value="<?php if (!empty($wedShift)){ echo $wedShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="wed_lunch_in" name="wed_lunch_in" value="<?php if (!empty($wedShift)){ echo $wedShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="wed_out" name="wed_out" value="<?php if (!empty($wedShift)){ echo $wedShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="wed_total" name="wed_total" value="<?php if (!empty($wedShift)){ echo $wedShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $wednesday; ?>'">
+              </td>
             </tr>
             <tr class="thursday">
               <th class="day">Thursday</th>
-              <td id="thur_date" class="date" name="thur_date"></td>
+              <td id="thur_date" class="date" name="thur_date"><?php echo date_format(date_create($thursday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="thur_in" name="thur_in" value="<?php if (!empty($thurShift)){ echo $thurShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="thur_lunch" name="thur_lunch" value="<?php if (!empty($thurShift)){ echo $thurShift['lunch'];} ?>"></td>
               <td class="time_in_lunch"><input type="time" id="thur_lunch_in" name="thur_lunch_in" value="<?php if (!empty($thurShift)){ echo $thurShift['timeBack'];} ?>"></td>
               <td class="out"><input type="time" id="thur_out" name="thur_out" value="<?php if (!empty($thurShift)){ echo $thurShift['timeOut'];} ?>"></td>
               <td class="total"><input type="text" id="thur_total" name="thur_total" value="<?php if (!empty($thurShift)){ echo $thurShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $thursday; ?>'">
+              </td>
             </tr>
             <tr class="friday">
               <th class="day">Friday</th>
-              <td id="fri_date" class="date" name="fri_date"></td>
+              <td id="fri_date" class="date" name="fri_date"><?php echo date_format(date_create($friday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="fri_in" name="fri_in" value="<?php if (!empty($friShift)){ echo $friShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="fri_lunch" name="fri_lunch" value="<?php if (!empty($friShift)){ echo $friShift['lunch'];} ?>"></td>
               <td class="time_in_lunch"><input type="time" id="fri_lunch_in" name="fri_lunch_in" value="<?php if (!empty($friShift)){ echo $friShift['timeBack'];} ?>"></td>
               <td class="out"><input type="time" id="fri_out" name="fri_out" value="<?php if (!empty($friShift)){ echo $friShift['timeOut'];} ?>"></td>
               <td class="total"><input type="text" id="fri_total" name="fri_total" value="<?php if (!empty($friShift)){ echo $friShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $friday; ?>'">
+              </td>
             </tr>
             <tr class="saturday">
               <th class="day">Saturday</th>
-              <td id="sat_date" class="date" name="sat_date"></td>
+              <td id="sat_date" class="date" name="sat_date"><?php echo date_format(date_create($saturday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="sat_in" name="sat_in" value="<?php if (!empty($satShift)){ echo $satShift['timeIn'];} ?>" ></td>
               <td class="lunch"><input type="time" id="sat_lunch" name="sat_lunch" value="<?php if (!empty($satShift)){ echo $satShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="sat_lunch_in" name="sat_lunch_in" value="<?php if (!empty($satShift)){ echo $satShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="sat_out" name="sat_out" value="<?php if (!empty($satShift)){ echo $satShift['timeOut'];} ?>" ></td>
               <td class="total"><input type="text" id="sat_total" name="sat_total" value="<?php if (!empty($satShift)){ echo $satShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $saturday; ?>'">
+              </td>
             </tr>
             <tr class="sunday">
               <th class="day">Sunday</th>
-              <td id="sun_date" class="date" name="sun_date"></td>
+              <td id="sun_date" class="date" name="sun_date"><?php echo date_format(date_create($sunday), 'M j'); ?></td>
               <td class="time_in"><input type="time" id="sun_in" name="sun_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeIn'];} ?>"></td>
               <td class="lunch"><input type="time" id="sun_lunch" name="sun_lunch" value="<?php if (!empty($sunShift)){ echo $sunShift['lunch'];} ?>" ></td>
               <td class="time_in_lunch"><input type="time" id="sun_lunch_in" name="sun_lunch_in" value="<?php if (!empty($sunShift)){ echo $sunShift['timeBack'];} ?>" ></td>
               <td class="out"><input type="time" id="sun_out" name="sun_out" value="<?php if (!empty($sunShift)){ echo $sunShift['timeOut'];} ?>" ></td>
               <td class="total"><input type='text' id="sun_total" name="sun_total" value="<?php if (!empty($sunShift)){ echo $sunShift['total'];} ?>" readonly></td>
+              <td>
+                <input class="button" type="button" value="Clear Row" onclick="location.href='../db_connection/clearRow.php?employeeID=<?php echo $employeeID; ?>&date=<?php echo $sunday; ?>'">
+              </td>
             </tr>
           </tbody>
         </table>
