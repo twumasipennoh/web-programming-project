@@ -23,14 +23,14 @@ $security_ans2 = filter_input(INPUT_POST, 'security-q2-answer');
 
 //Execute the query
 $query = "INSERT INTO HR_Tables.Employee
-            (employeeID, firstName, lastName, username, password, jobTitle, phoneNumber, emailAddress,
+            (firstName, lastName, username, password, jobTitle, phoneNumber, emailAddress,
             securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2)
         VALUES
-            (:employeeID, :firstName, :lastName, :username, :password, :jobTitle, :phoneNumber, :emailAddress,
+            (:firstName, :lastName, :username, :password, :jobTitle, :phoneNumber, :emailAddress,
             :securityQuestion1, :securityAnswer1, :securityQuestion2, :securityAnswer2)";
 $statement = $conn->prepare($query);
 $statement->execute([
-    'employeeID' => $employee_ID,
+    // 'employeeID' => $employee_ID,
     'firstName' => $first_name,
     'lastName' => $last_name,
     'username' => $username,
@@ -46,12 +46,12 @@ $statement->execute([
 $statement->closeCursor();
 
 $query2 = "INSERT INTO HR_Tables.Address
-            (employeeID, streetAddress, streetAddress2, city, state, zipCode)
+            (streetAddress, streetAddress2, city, state, zipCode)
         VALUES
-            (:employeeID, :streetAddress, :streetAddress2, :city, :state, :zipCode)";
+            (:streetAddress, :streetAddress2, :city, :state, :zipCode)";
 $statement2 = $conn->prepare($query2);
 $statement2->execute([
-    'employeeID' => $employee_ID,
+    // 'employeeID' => $employee_ID,
     'streetAddress' => $street_addr1,
     'streetAddress2' => $street_addr2,
     'city' => $city,
