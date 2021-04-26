@@ -38,8 +38,8 @@
       <br>
 
    		<form id="registration" action="../db_connection/register_employee.php" onsubmit="return validateValues()" method="post">
-   			<label for="eID">Employee ID:</label>
-   			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
+   			<!-- <label for="eID">Employee ID:</label>
+   			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br> -->
 
         <label for="fname">First Name:</label>
    			<input type="text" name="fname" id="fname"><span id ="fnerror"></span><br>
@@ -53,9 +53,10 @@
         <label for ="lname">Last name:</label>
         <input type="text" name="lname" id="lnanme"><span id ="lnerror"></span><br> -->
 
-   			<label for="email">E-Mail:</label>
-   			<input type="email" id ="email" name="email"><span id ="emailerror"></span><br>
-   			<label for ="username">Username:</label>
+   			<!-- <label for="email">E-Mail:</label>
+   			<input type="email" id ="email" name="email"><span id ="emailerror"></span><br> -->
+
+        <label for ="username">Username:</label>
    			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 
         <label for ="jobTitle">Job Title:</label>
