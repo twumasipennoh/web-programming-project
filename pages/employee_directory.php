@@ -76,26 +76,26 @@ if (!isset($employeeID)){
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search']) && isset($_POST['FilterBy'])) {
 
 	if($_POST['FilterBy'] == 'title'){
-		$query = "SELECT * FROM HR_Tables.Employee WHERE jobTitle ='" . $_POST['search'] ."'";
+		$query = "SELECT * FROM HR_Tables.Employee WHERE jobTitle LIKE '%" . $_POST['search'] ."%' ORDER BY lastName";
 		$employees = $conn->query($query);
 
 
 	}
 	elseif($_POST['FilterBy'] == 'firstname'){
-		$query = "SELECT * FROM HR_Tables.Employee WHERE firstName ='" . $_POST['search']."'";
+		$query = "SELECT * FROM HR_Tables.Employee WHERE firstName LIKE '%" . $_POST['search']."%' ORDER BY lastName";
 		$employees = $conn->query($query);
 
 
 	}
 	elseif($_POST['FilterBy'] == 'lastname'){
-		$query = "SELECT * FROM HR_Tables.Employee WHERE lastName ='" . $_POST['search']."'";
+		$query = "SELECT * FROM HR_Tables.Employee WHERE lastName LIKE '%" . $_POST['search']."%' ORDER BY lastName";
 		$employees = $conn->query($query);
 
 
 	}
 	else{
 		
-		$query = "SELECT * FROM HR_Tables.Employee";
+		$query = "SELECT * FROM HR_Tables.Employee ORDER BY lastName";
 		$employees = $conn->query($query);
 		
 	}
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search']) && isset($_P
 }
 
 else {
-	$query = "SELECT * FROM HR_Tables.Employee";
+	$query = "SELECT * FROM HR_Tables.Employee ORDER BY lastName";
 	$employees = $conn->query($query);
 	
 	
