@@ -98,10 +98,22 @@
             </span><br>
             
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" value="<?php echo $employee['phoneNumber']; ?>"><span id ="phoneerror"></span><br>
+            <input type="tel" id="phone" name="phone" value="<?php 
+                                                              if($employee['phoneNumber'] != NULL){
+                                                                echo $employee['phoneNumber']; 
+                                                              } else {
+                                                                echo "";
+                                                              }
+                                                            ?>"><span id ="phoneerror"></span><br>
 
             <label for="st1">Street Address 1:</label>
-            <input type="text" id="st1" name="st1" value="<?php echo $address['streetAddress']; ?>">
+            <input type="text" id="st1" name="st1" value="<?php 
+                                                            if($address['streetAddress'] != NULL){
+                                                              echo $address['streetAddress'];
+                                                            } else {
+                                                              echo "";
+                                                            }   
+                                                            ?>">
             <span style="color: red" class="error" id ="streeterror">
                 <?php 
                   if(isset($street_addr1_error) and $street_addr1_error != ""){
@@ -112,16 +124,40 @@
             </span><br>
 
             <label for="st2">Street Address 2:</label>
-            <input type="text" id="st2" name="st2" value="<?php echo $address['streetAddress2']; ?>"><br>
+            <input type="text" id="st2" name="st2" value="<?php 
+                                                            if($address['streetAddress2'] != NULL){
+                                                              echo $address['streetAddress2'];
+                                                            } else {
+                                                              echo "";
+                                                            }
+                                                          ?>"><br>
 
             <label for="city">City:</label>
-            <input type="text" id="city" name="city" value="<?php echo $address['city']; ?>"><span class="error" id ="cityerror"></span><br>
+            <input type="text" id="city" name="city" value="<?php 
+                                                              if($address['city'] != NULL){
+                                                                echo $address['city'];
+                                                              } else {
+                                                                echo "";
+                                                              }
+                                                            ?>"><span class="error" id ="cityerror"></span><br>
 
             <label for="state">State:</label>
-            <input type="text" id="state" name="state" value="<?php echo $address['state']; ?>"><span class="error" id ="stateerror"></span><br>
+            <input type="text" id="state" name="state" value="<?php 
+                                                                if($address['state'] != NULL){
+                                                                  echo $address['state'];
+                                                                } else {
+                                                                  echo "";
+                                                                }
+                                                              ?>"><span class="error" id ="stateerror"></span><br>
 
             <label for="zip">Zip Code:</label>
-            <input type="text" id="zip" name="zip" value="<?php echo $address['zipCode']; ?>"><span class="error" id ="zipCodeerror"></span><br>
+            <input type="text" id="zip" name="zip" value="<?php
+                                                            if($address['zipCode'] != NULL){
+                                                              echo $address['zipCode']; 
+                                                            } else {
+                                                              echo "";
+                                                            }
+                                                          ?>"><span class="error" id ="zipCodeerror"></span><br>
         </div>
 
         <div class="info">
