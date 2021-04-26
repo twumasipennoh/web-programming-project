@@ -17,7 +17,7 @@
     <?php include '../stylesheets/requestPagecss.css'; ?>
   </style>
   <meta charset="utf-8">
-  <title>Request Page</title>
+  <title>Artec</title>
   <link rel="shortcut icon" href="../images/logo_icon.ico">
   <meta name="description" content="Computer Software Company">
   <script src="../javascript/timesheetData.js"></script>

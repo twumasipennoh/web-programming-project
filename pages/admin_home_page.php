@@ -23,8 +23,8 @@
       <img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
       <nav id="nav_menu">
         <ul>
-          <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>">Home</a></li>
-          <li><a href="../pages/add_employee.php?<?php echo $employeeID ?>">Add Employee</a></li>
+          <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
+          <li><a href="../pages/add_employee.php?employeeID=<?php echo $employeeID ?>">Add Employee</a></li>
           <li><a href="../pages/deleteEmpForm.php">Delete Employee</a></li>
 
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
