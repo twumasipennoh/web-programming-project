@@ -7,11 +7,12 @@ body {
   box-shadow: 5px 10px 8px black;
 }
 
-p,h1 {
+table,th,td,input,p,h1{
   padding: 0;
   margin: 0;
 }
 
+/* ********************************************************************************************* */
 /* Header */
 header {
     border-bottom: 2px solid black;
@@ -50,42 +51,54 @@ nav a:hover, a:focus {color: gray;}
   text-decoration: underline;
 }
 
+/* ********************************************************************************************* */
 /* Main */
-main {
-  padding: 5em 5em 20em;
-  background-image: url(../images/background.jpg), url(../images/black_box.jpg);
-  background-color: rgba(0,0,0,.2);
-  background-blend-mode: multiply;
-  background-position: left, right;
-  background-size: 75% 100%, 25% 100%;
-  background-repeat: no-repeat;
 
+
+/* ********************************************************************************************* */
+/* Table */
+.request_table {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2em 0em 3em;
 }
 
-main p,h1 {
-  color: white;
-  padding: .75rem 0;
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 0em auto;
+  box-shadow: 5px 5px 8px grey;
 }
 
-.right {
-  text-align: right;
-  font-size: 4.25rem;
-}
-
-main p {
-  width: 35%;
+table caption {
+  font-size: 2em;
+  margin-bottom: .5em;
   text-align: center;
-  float: right;
-  font-size: 150%;
-  padding-right: 2rem;
-  font-weight: lighter;
 }
 
+th, td {
+  border: 1px solid lightgrey;
+  padding: .25em 0em;
+  text-align: center;
+}
+
+table .request {
+  width: 70%;
+}
+
+table .left {
+  text-align: left;
+  padding: .25em 1em;
+}
+
+
+/* ********************************************************************************************* */
 /* Footer */
 footer {
   /* color: white; */
   font-weight: lighter;
   text-align: center;
+  clear: both;
   /* background-color: grey; */
   padding: 1rem 0;
 }
