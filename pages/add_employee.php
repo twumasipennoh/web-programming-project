@@ -10,11 +10,14 @@
 
  <html lang="en">
    <head>
+     <style>
+       <?php include '../stylesheets/addEmpCss.css'; ?>
+     </style>
      <meta charset="utf-8">
 
      <title>Artec</title>
      <link rel="shortcut icon" href="../images/logo_icon.ico">
-     <link rel="stylesheet" href="../stylesheets/addEmpCss.css">
+     <!-- <link rel="stylesheet" href="../stylesheets/addEmpCss.css"> -->
      <meta name="description" content="Computer Software Company">
      <script src="../javascript/addEmp.js"></script>
    </head>
@@ -31,7 +34,6 @@
 		      <li><a href="../pages/adminEmpDirectory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
           <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
-
         </ul>
       </nav>
     </header>

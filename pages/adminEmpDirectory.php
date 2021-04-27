@@ -3,9 +3,13 @@
     $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
   }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+      <?php include '../stylesheets/dirCSS.css'; ?>
+    </style>
     <meta charset="utf-8">
 
     <title>Artec</title>
@@ -33,7 +37,6 @@
 <?php
 
 
-echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/dirCSS.css' />";
 require_once('../db_connection/database.php');
 
 if (!isset($employeeID)){
