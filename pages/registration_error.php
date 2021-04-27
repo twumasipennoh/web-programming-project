@@ -25,23 +25,29 @@
 							        $error = "";
 							  ?>
 		</p>
-    <form id="registrationCheck" action="../db_connection/employeeRegistrationCheck.php" onsubmit="return validateValues()" method="post">
-  
+		<form id="registrationCheck" action="../db_connection/employeeRegistrationCheck.php" onsubmit="return validateValues()" method="post">
+   			<label for="eID">Employee ID:</label>
+   			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
 
-      <label for="eID">Username:</label>
-      <input type="text" name="username" id="username"><span id ="unerror"></span><br>
+   			<label for ="username">Username:</label>
+   			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
 
-      <label for="fname">First Name:</label>
-      <input type="text" name="fname" id="fname"><span id ="fnerror"></span><br>
+   			<label for="fname">First Name:</label>
+   			<input type="text" name="fname" id="fname"><span id ="fnerror"></span><br>
 
-      <label for="lname">Last Name:</label>
-      <input type="text" name="lname" id="lname"><span id ="lnerror"></span><br>
+   			<label for="lname">Last Name:</label>
+   			<input type="text" name="lname" id="lname"><span id ="lnerror"></span><br>
 
 
 
-      <input type="submit" id="submit" value="Submit">
-      <br>
-    </form>
-	</main>
-</body>
-</html>
+   			<input type="submit" id="submit" value="Submit">
+   			<input type="button" id="resetform" value="Reset">
+   		</form>
+   	</main>
+
+	
+	<footer>
+      <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
+    </footer>
+   </body>
+   </html>

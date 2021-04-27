@@ -30,7 +30,7 @@ if($returned_user != NULL){
 //Display the Confirmation Page
 if(!$returned_user){
 
-  $error = "Error:Wrong credintials used on you are not in the databse";
+  $error = "Error: Invalid credentials used";
   include('../pages/registration_error.php');
 
 } else{
