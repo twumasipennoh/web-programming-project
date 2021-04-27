@@ -24,19 +24,21 @@
 </head>
 
 <body>
-  <header>
-      <a href="../pages/user_home_page.php"><img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100"></a>
-
+<header>
+      <img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
       <nav id="nav_menu">
         <ul>
           <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
+          <li><a href="../pages/add_employee.php?employeeID=<?php echo $employeeID ?>">Add Employee</a></li>
+          <li><a href="../pages/deleteEmpForm.php?employeeID=<?php echo $employeeID ?>">Delete Employee</a></li>
           <li><a href="../pages/adminRequestPage.php?employeeID=<?php echo $employeeID ?>" class="current">Requests</a></li>
-	  <li><a href="../pages/adminEmpDirectory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
-          <li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+		      <li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
+          <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
+
         </ul>
       </nav>
-  </header>
+    </header>
 
   <main>
     <!-- <h1>Employee Requests</h1> -->
