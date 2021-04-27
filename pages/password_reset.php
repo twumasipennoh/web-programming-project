@@ -33,7 +33,7 @@
 			<label style="width: 210px; margin-left: 130px;" for ="username/email">Username or Email Address:</label>
 			<input type="text" name="username/email" id="username/email"><span id ="unerror"></span><br>
 
-			<input style="margin-left: 445px;" type="submit" id="reset-button" value="Reset Password">
+			<input style="margin-left: 260px;" type="submit" id="reset-button" value="Reset Password">
         </form>
 	</main>
 
