@@ -5,7 +5,7 @@ var $ = function(id) {
 var resetForm = function() {
 $("eID").value = "";
 $("email").value = "";
-$("username").value = "";
+//$("username").value = "";
 $("pw").value = "";
 $("pw2").value = "";
 // $("fname").value = "";
@@ -48,14 +48,14 @@ $("sec-q2-error").innerHTML = "*";
 
 	}
 	// if ($("username").value === ""){
-	//
-	// 	$("unerror").innerHTML = "This field is required.";
+	
+	// 	$("unerror").innerHTML = " This field is required.";
 	// 	sub = false;
 	// }
 	// else{
-	//
+	
 	// 	$("unerror").innerHTML = "";
-	//
+	
 	// }
 	// if ($("fname").value === ""){
 	//
@@ -144,7 +144,7 @@ $("sec-q2-error").innerHTML = "*";
 window.onload = function() {
 $("iderror").style.color = "red";
 $("emailerror").style.color = "red";
-// $("unerror").style.color = "red";
+//$("unerror").style.color = "red";
 $("pwerror").style.color = "red";
 $("pw2error").style.color = "red";
 // $("fnerror").style.color = "red";
@@ -154,7 +154,7 @@ $("sec-q2-error").style.color = "red";
 
 $("iderror").innerHTML = "*";
 $("emailerror").innerHTML = "*";
-// $("unerror").innerHTML = "*";
+//$("unerror").innerHTML = "*";
 $("pwerror").innerHTML = "*";
 $("pw2error").innerHTML = "*";
 // $("fnerror").innerHTML = "*";

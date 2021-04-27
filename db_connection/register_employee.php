@@ -47,29 +47,23 @@ $statement->execute([
 ]);
 $statement->closeCursor();
 
-$query2 = "INSERT INTO HR_Tables.Address
-            (streetAddress, streetAddress2, city, state, zipCode)
-        VALUES
-            (:streetAddress, :streetAddress2, :city, :state, :zipCode)";
-$statement2 = $conn->prepare($query2);
-$statement2->execute([
-    // 'employeeID' => $employee_ID,
-    'streetAddress' => $street_addr1,
-    'streetAddress2' => $street_addr2,
-    'city' => $city,
-    'state' => $state,
-    'zipCode' => $zip_code
-]);
-$statement2->closeCursor();
+// $query2 = "INSERT INTO HR_Tables.Address
+//             (streetAddress, streetAddress2, city, state, zipCode)
+//         VALUES
+//             (:streetAddress, :streetAddress2, :city, :state, :zipCode)";
+// $statement2 = $conn->prepare($query2);
+// $statement2->execute([
+//     // 'employeeID' => $employee_ID,
+//     'streetAddress' => $street_addr1,
+//     'streetAddress2' => $street_addr2,
+//     'city' => $city,
+//     'state' => $state,
+//     'zipCode' => $zip_code
+// ]);
+// $statement2->closeCursor();
 
 //Display the Confirmation Page
 if($jobtitle != Null){
   include('../pages/empAdditionConfirmation.php');
 }
-
-else{
-  include('..\pages\RegConfirmation.html');
-}
-
-
 ?>

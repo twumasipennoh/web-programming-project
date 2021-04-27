@@ -101,10 +101,9 @@ table .left {
 /* ********************************************************************************************* */
 /* Footer */
 footer {
-  /* color: white; */
-  font-weight: lighter;
-  text-align: center;
+	border-top: 2px solid black;
+	font-weight: lighter;
+	text-align: center;
   clear: both;
-  /* background-color: grey; */
-  padding: 1rem 0;
+	padding: 1rem 0;
 }

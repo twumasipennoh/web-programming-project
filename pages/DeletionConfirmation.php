@@ -37,10 +37,10 @@
 
     <main>
       <h2>An employee has been removed from the database. To remove another employee click on the delete button below.</h2>
-	  <form action ="../pages/deleteEmpForm.php">
+	  <form action ="../pages/deleteEmpForm.php<?php echo $employeeID ?>">
 		<input type="submit" value="Delete" class="LogButton">
 		</form>
-	<form action ="../pages/adminEmpDirectory.php">
+	<form action ="../pages/adminEmpDirectory.php<?php echo $employeeID ?>">
 	    <input type="submit" value="View Employee Directory" class="LogButton">
 	    </main>
 

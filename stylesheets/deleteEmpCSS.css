@@ -207,3 +207,11 @@ input[type=button]{
 	margin-left:150px;
 	margin-bottom:.5em;
 }
+
+/* Footer */
+footer {
+	border-top: 2px solid black;
+	font-weight: lighter;
+	text-align: center;
+	padding: 1rem 0;
+}

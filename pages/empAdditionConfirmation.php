@@ -36,11 +36,11 @@
 
     <main>
       <h2>Employee has been added into the database. To add another employee click the add button below.</h2>
-	  <form action ="../pages/add_employee.php">
+	  <form action ="../pages/add_employee.php?employeeID=<?php echo $employeeID ?>">
 		<input type="submit" value="Add" class="LogButton">
 		</form>
 	    
-<form action ="../pages/adminEmpDirectory.php">
+<form action ="../pages/adminEmpDirectory.php?employeeID=<?php echo $employeeID ?>">
     <input type="submit" value="View Employee Directory " class="LogButton">
 	</main>
     <footer>

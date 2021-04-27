@@ -93,9 +93,9 @@ th,td {
 
 /* ********************************************************************************************* */
 /* Footer */
-
 footer {
-  font-weight: lighter;
-  text-align: center;
-  padding: 1rem 0;
+	border-top: 2px solid black;
+	font-weight: lighter;
+	text-align: center;
+	padding: 1rem 0;
 }
