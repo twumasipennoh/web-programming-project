@@ -21,6 +21,8 @@
           <li><a href="../pages/requestPage.html">Requests</a></li>
           <li><a href="../pages/admin_home_page.html">Pay Info</a></li>
           <li><a href="../pages/admin_home_page.html"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
+          <li><a href="../pages/welcome_page.html">Log out</a></li>
+
         </ul>
       </nav>
     </header>
