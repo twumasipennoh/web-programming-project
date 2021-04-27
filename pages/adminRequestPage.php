@@ -65,15 +65,28 @@
             <th>Date</th>
             <th class="request">Request</th>
             <th>Status</th>
+            <th>Modify</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($requests as $req){ ?>
             <tr>
-              <td><?php echo $req['employeeID'] ?></td>
-              <td><?php echo $req['date'] ?></td>
-              <td class="left"><?php echo $req['reqSubject'] . ":<br>" . $req['details'] ?></td>
-              <td><?php echo $req['reqStatus'] ?></td>
+              <td><?php echo $req['employeeID']; ?></td>
+              <td><?php echo $req['date']; ?></td>
+              <td class="left"><?php echo $req['reqSubject'] . ":<br>" . $req['details']; ?></td>
+              <td><?php echo $req['reqStatus']; ?></td>
+              <form action="../db_connection/modRequest.php?employeeID=<?php echo $employeeID; ?>" method="post">
+                <td>
+                  <input type="hidden" name="id" value="<?php echo $req['employeeID']; ?>">
+                  <input type="hidden" name="subject" value="<?php echo $req['reqSubject']; ?>">
+                  <select class="status" name="status" onchange="this.form.submit()">
+                    <option disabled selected>-- Options --</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In-Progress">In-Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </td>
+              </form>
             </tr>
           <?php } ?>
         </tbody>
