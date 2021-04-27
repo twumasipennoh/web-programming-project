@@ -29,7 +29,7 @@
 
       <nav id="nav_menu">
         <ul>
-          <li><a href="../pages/user_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
+          <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
           <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
           <li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>" class="current">Requests</a></li>
           <li><a href="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
