@@ -30,10 +30,8 @@
       <nav id="nav_menu">
         <ul>
           <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
-          <li><a href="../pages/timesheet.php?employeeID=<?php echo $employeeID ?>">Timesheet</a></li>
-          <li><a href="../pages/requestPage.php?employeeID=<?php echo $employeeID ?>" class="current">Requests</a></li>
-          <li><a href="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>">Pay Info</a></li>
-		      <li><a href="../pages/employee_directory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
+          <li><a href="../pages/adminRequestPage.php?employeeID=<?php echo $employeeID ?>" class="current">Requests</a></li>
+	  <li><a href="../pages/adminEmpDirectory.php?employeeID=<?php echo $employeeID ?>">Employee Directory</a></li>
           <li><a href="../pages/personal_info_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
         </ul>
