@@ -29,8 +29,8 @@
           <li><a class="current" href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Home</a></li>
           <li><a href="../pages/add_employee.php?employeeID=<?php echo $employeeID ?>">Add Employee</a></li>
           <li><a href="../pages/deleteEmpForm.php?employeeID=<?php echo $employeeID ?>">Delete Employee</a></li>
-          <li><a href="../pages/adminRequestPage.php?employeeID=<?php echo $employeeID ?>">View Requests</a></li>
-          <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>">Employee Pay Info</a></li>
+          <li><a href="../pages/employee_directory.php">Employee Directory</a></li>
+          <li><a href="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>">Employee Pay Info</a></li>
           <li><a href="../pages/admin_home_page.php?employeeID=<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
           <li><a href="../pages/welcome_page.html">Log out</a></li>
 
