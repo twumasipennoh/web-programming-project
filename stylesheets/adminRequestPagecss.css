@@ -83,7 +83,11 @@ th, td {
 }
 
 table .request {
-  width: 70%;
+  width: 60%;
+}
+
+table .status {
+  padding: 0 1em;
 }
 
 table .left {

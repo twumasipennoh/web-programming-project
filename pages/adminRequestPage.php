@@ -62,7 +62,7 @@
             <th>Employee ID</th>
             <th>Date</th>
             <th class="request">Request</th>
-            <th>Status</th>
+            <th class="status">Status</th>
             <th>Modify</th>
           </tr>
         </thead>

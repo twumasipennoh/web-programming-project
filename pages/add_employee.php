@@ -24,6 +24,8 @@
        <img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
        <nav id="nav_menu">
          <ul>
+           
+
            <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>">Home</a></li>
            <li><a href="../pages/adminRequestPage.php?<?php echo $employeeID ?>">Requests</a></li>
            <li><a href="../pages/admin_home_page.php?<?php echo $employeeID ?>"><img src="../images/profile_img.png" alt="Profile Image" width="30"></a></li>
