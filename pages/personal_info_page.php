@@ -101,13 +101,7 @@
             </span><br>
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" value="<?php
-                                                              if($employee['phoneNumber'] != NULL){
-                                                                echo $employee['phoneNumber'];
-                                                              } else {
-                                                                echo "";
-                                                              }
-                                                            ?>"><span id ="phoneerror"></span><br>
+            <input type="tel" id="phone" name="phone" value="<?php if($employee['phoneNumber'] != NULL){echo $employee['phoneNumber'];} else { echo ""; }?>"><span id ="phoneerror"></span><br>
 
             <label for="st1">Street Address 1:</label>
             <input type="text" id="st1" name="st1" value="<?php

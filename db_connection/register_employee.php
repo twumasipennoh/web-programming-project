@@ -20,14 +20,15 @@ $security_q1 = filter_input(INPUT_POST, 'security-q1');
 $security_ans1 = filter_input(INPUT_POST, 'security-q1-answer');
 $security_q2 = filter_input(INPUT_POST, 'security-q2');
 $security_ans2 = filter_input(INPUT_POST, 'security-q2-answer');
+$wage = filter_input(INPUT_POST, 'wage');
 
 //Execute the query
 $query = "INSERT INTO HR_Tables.Employee
             (firstName, lastName, username, password, jobTitle, phoneNumber, emailAddress,
-            securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2)
+            securityQuestion1, securityAnswer1, securityQuestion2, securityAnswer2, wage)
         VALUES
             (:firstName, :lastName, :username, :password, :jobTitle, :phoneNumber, :emailAddress,
-            :securityQuestion1, :securityAnswer1, :securityQuestion2, :securityAnswer2)";
+            :securityQuestion1, :securityAnswer1, :securityQuestion2, :securityAnswer2, :wage)";
 $statement = $conn->prepare($query);
 $statement->execute([
     // 'employeeID' => $employee_ID,
@@ -41,7 +42,8 @@ $statement->execute([
     'securityQuestion1' => $security_q1,
     'securityAnswer1' => $security_ans1,
     'securityQuestion2' => $security_q2,
-    'securityAnswer2' => $security_ans2
+    'securityAnswer2' => $security_ans2,
+    'wage' => $wage
 ]);
 $statement->closeCursor();
 

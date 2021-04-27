@@ -68,7 +68,8 @@
         <label for ="jobTitle">Job Title:</label>
    			<input type="text" name="jobTitle" id="jobTitle"><span id ="jterror"></span><br>
 
-
+        <label for ="wage">Hourly Wage: $</label>
+   			<input type="text" name="wage" id="wage"><span id =""></span><br>
 
    			<input type="submit" id="submit" value="Submit">
         <br>

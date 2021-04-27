@@ -41,6 +41,16 @@ $statement->execute([
 $returned_user = $statement->fetch();
 $statement->closeCursor();
 
+
+$check = "SELECT * FROM HR_Tables.Address WHERE employeeID=$employee_ID";
+$res = $conn -> query($check);
+$return = $res -> fetch();
+
+if (empty($return)){
+  $insert = "INSERT INTO HR_Tables.Address (employeeID, streetAddress, streetAddress2, city, state, zipCode) SELECT $employee_ID, '$street_addr1', '$street_addr2', '$city', '$state', '$zip_code'";
+  $ex = $conn -> exec($insert);
+}
+
 $query2 ="UPDATE HR_Tables.Address
               SET streetAddress=:streetAddress, streetAddress2=:streetAddress2, city=:city, state=:state,
               zipCode=:zipCode
