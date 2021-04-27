@@ -31,8 +31,9 @@ require_once('../db_connection/database.php');
 	  <form action ="../pages/deleteEmpForm.php">
 		<input type="submit" value="Delete" class="LogButton">
 		</form>
-
-    </main>
+	<form action ="../pages/adminEmpDirectory.php">
+	    <input type="submit" value="View Employee Directory" class="LogButton">
+	    </main>
 
     <footer>
       <p>Copyright &copy; 2021 Artec, Inc. All rights reserved.</p>
