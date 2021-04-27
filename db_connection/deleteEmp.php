@@ -30,6 +30,14 @@ $statement->execute([
   'employeeID' => $employee_ID,
 ]);
 
+//Execute the query
+$query3 = 'DELETE FROM HR_Tables.Address WHERE employeeID = :employeeID; ';
+
+$statement = $conn->prepare($query3);
+$statement->execute([
+  'employeeID' => $employee_ID,
+]);
+
 
 $statement->closeCursor();
 

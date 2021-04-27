@@ -100,6 +100,7 @@ table .left {
 /* Footer */
 footer {
   /* color: white; */
+	border-top: 2px solid black;
   font-weight: lighter;
   text-align: center;
   clear: both;

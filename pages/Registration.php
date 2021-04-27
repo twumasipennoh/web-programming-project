@@ -43,7 +43,7 @@
 			</p>
 			<!-- <label for ="username">Username:</label>
 			<input type="text" name="username" id="username"><span id ="unerror"></span><br>
-			<p id="error-message">
+			<p id="error-username">
 			</p> -->
 			<label for ="password">Password:</label>
 			<input type="password" name="password" id="pw"><span id ="pwerror"></span><br>
