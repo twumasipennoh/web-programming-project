@@ -62,7 +62,7 @@ $statement2->closeCursor();
 
 //Display the Confirmation Page
 if($jobtitle != Null){
-  include('../pages/empAdditionConfirmation.html');
+  include('../pages/empAdditionConfirmation.php');
 }
 
 else{

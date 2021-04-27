@@ -3,6 +3,8 @@ body {
   padding: 0;
   margin: 0 auto;
   max-width: 1500px;
+  border: 1px solid black;
+  box-shadow: 5px 10px 8px black;
 }
 
 p,h1 {
@@ -61,4 +63,11 @@ padding: 5em 5em 20em;
 	background-color:lightgrey;
 
 
+}
+
+/* Footer */
+footer {
+  font-weight: lighter;
+  text-align: center;
+  padding: 1rem 0;
 }
