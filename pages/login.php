@@ -12,7 +12,7 @@
 			<nav id="nav_menu">
 				<ul>
 					<li><a href="../pages/welcome_page.html">Home</a></li>
-          			<li><a href="../pages/Registration.php">Register</a></li>
+          			<li><a href="../pages/registrationCheck.php">Register</a></li>
           			<li><a href="../pages/login.php" class="current">Login</a></li>
 				</ul>
 			</nav>
