@@ -2,7 +2,7 @@
 <head>
 	<title>Artec - Login</title>
 	<link rel="shortcut icon" href="../images/logo_icon.ico">
-	<link rel="stylesheet" href="../stylesheets/RegCSS.css">
+	<link rel="stylesheet" href="../stylesheets/loginStyles.css">
 	<script src="../javascript/validateLoginForm.js"></script>
 </head>
 

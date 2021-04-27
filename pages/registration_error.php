@@ -1,18 +1,19 @@
 <html lang="en">
 <head>
-	<title>Artec - Login</title>
+	<title>Artec - Registration Portal</title>
 	<link rel="shortcut icon" href="../images/logo_icon.ico">
 	<link rel="stylesheet" href="../stylesheets/RegCSS.css">
   <script src="../javascript/RegistrationCheck.js"></script>
 </head>
 
 <body>
-	<header>
+<header>
 		<img id="logo" src="../images/artec_logo.png" alt="Company Logo" width="100">
 			<nav id="nav_menu">
 				<ul>
 					<li><a href="../pages/welcome_page.html">Home</a></li>
-
+          			<li><a href="../pages/registrationCheck.php" class="current">Register</a></li>
+          			<li><a href="../pages/login.php">Login</a></li>
 				</ul>
 			</nav>
 	</header>
@@ -24,7 +25,7 @@
 							        $error = "";
 							  ?>
 		</p>
-    <form id="registration" action="../db_connection/employeeRegistrationCheck.php" onsubmit="return validateValues()" method="post">
+    <form id="registrationCheck" action="../db_connection/employeeRegistrationCheck.php" onsubmit="return validateValues()" method="post">
   
 
       <label for="eID">Username:</label>

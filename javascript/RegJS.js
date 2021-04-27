@@ -39,7 +39,7 @@ $("sec-q2-error").innerHTML = "*";
 	var sub = true;
 	if ($("eID").value === ""){
 
-		$("iderror").innerHTML = "This field is required.";
+		$("iderror").innerHTML = " This field is required.";
 		sub = false;
 	}
 	else{
@@ -88,13 +88,13 @@ $("sec-q2-error").innerHTML = "*";
 	}
 	else {
 
-		$("emailerror").innerHTML = "Please enter a valid e-mail address.";
+		$("emailerror").innerHTML = " Please enter a valid e-mail address.";
 		sub = false;
 	}
 
 	if (pass !== pass2) {
 
-		$("pw2error").innerHTML = "Both passwords must match";
+		$("pw2error").innerHTML = " Both passwords must match";
 		sub = false;
 	}
 	else {
@@ -111,12 +111,12 @@ $("sec-q2-error").innerHTML = "*";
 	}
 	else {
 
-		$("pwerror").innerHTML = "Password must be between 7 to 15 characters and contain at least one special character and one numerical digit.";
+		$("pwerror").innerHTML = " Password must be between 7 to 15 characters and contain at least one special character and one numerical digit.";
 		sub = false;
 	}
 
 	if ($("security-q1-answer").value === ""){
-		$("sec-q1-error").innerHTML = "This field is required.";
+		$("sec-q1-error").innerHTML = " This field is required.";
 		sub = false;
 	}
 	else{
@@ -124,7 +124,7 @@ $("sec-q2-error").innerHTML = "*";
 	}
 
 	if ($("security-q2-answer").value === ""){
-		$("sec-q2-error").innerHTML = "This field is required.";
+		$("sec-q2-error").innerHTML = " This field is required.";
 		sub = false;
 	}
 	else{

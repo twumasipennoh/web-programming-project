@@ -18,7 +18,7 @@
 			<nav id="nav_menu">
 				<ul>
 					<li><a href="../pages/welcome_page.html">Home</a></li>
-          			<li><a href="../pages/Registration.php" class="current">Register</a></li>
+          			<li><a href="../pages/registrationCheck.php" class="current">Register</a></li>
           			<li><a href="../pages/login.php">Login</a></li>
 				</ul>
 			</nav>
@@ -30,9 +30,9 @@
 		$email_error = "";
 		?>
 
+		<h3>Employee Registration Portal</h3>
+		<p>Fields marked with an asterisk(*) are required.</p>
 		<form id="registration" action="../db_connection/registrationUpdate.php" onsubmit="return validateValues()" method="post">
-			<h3>Employee Registration Portal</h3>
-			<p>Fields marked with an asterisk(*) are required.</p>
 			<label for="eID">Employee ID:</label>
 			<input type="text" name="eID" id="eID"><span id ="iderror"></span><br>
 			<label for="email">E-Mail:</label>

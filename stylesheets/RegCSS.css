@@ -46,6 +46,10 @@ nav a:hover, a:focus {color: gray;}
   text-decoration: underline;
 }
 
+main p{
+	text-align: center;
+}
+
 main h3 {
 	text-align:center;
 	padding-bottom: 15px;
@@ -79,6 +83,10 @@ label {
 	margin-bottom:2em;
 }
 
+#registration {
+	margin-left: 250px;
+}
+
 #login {
 	margin-left: 260px;
 }
@@ -103,7 +111,7 @@ input[type=button]{
 }
 
 form {
-	padding-left: 5em;
+	margin-left: 420px;
 	padding-bottom: 2em;
 }
 

@@ -55,15 +55,44 @@ nav a:hover, a:focus {color: gray;}
 /* Main */
 main {
   padding: 1.5em 2em;
-  text-align: center;
 }
 
 h3 {
   padding: 0 0 .5em;
+  text-align: center;
 }
 
 input {
   margin: 1em 1em;
+}
+
+main #error-message {
+	text-align: center;
+	color: red;
+}
+
+#unerror {
+	color: red;
+}
+
+#pwerror {
+	color: red;
+}
+
+.error {
+	color:red;
+}
+
+#login label {
+	width: 85px;
+}
+
+#login {
+	margin-left: 260px;
+}
+
+#login input[type=submit]{
+	margin-left: 450px;
 }
 /* ********************************************************************************************* */
 /* Footer */
