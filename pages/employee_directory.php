@@ -1,4 +1,4 @@
-<?php  
+<?php
   if (!isset($employeeID)){
     $employeeID = filter_input(INPUT_GET, 'employeeID', FILTER_VALIDATE_INT); // Gets the employeeID from previous pages
   }
@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+      <?php include '../stylesheets/dirCSS.css'; ?>
+    </style>
     <meta charset="utf-8">
 
     <title>Artec</title>
@@ -33,8 +36,6 @@
 
 <?php
 
-
-echo "<link rel='stylesheet' type ='text/css' href='../stylesheets/dirCSS.css' />";
 require_once('../db_connection/database.php');
 
 if (!isset($employeeID)){
@@ -94,10 +95,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search']) && isset($_P
 
 	}
 	else{
-		
+
 		$query = "SELECT * FROM HR_Tables.Employee ORDER BY lastName";
 		$employees = $conn->query($query);
-		
+
 	}
 
 }
@@ -105,8 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search']) && isset($_P
 else {
 	$query = "SELECT * FROM HR_Tables.Employee ORDER BY lastName";
 	$employees = $conn->query($query);
-	
-	
+
+
 }
 
 ?>
@@ -119,7 +120,7 @@ else {
 	<td>
 	</td>
 </tr>
-			
+
 <?php }?>
 </table>
 <?php

@@ -209,7 +209,7 @@
           </tbody>
         </table>
         <h2 class="total_hours" id="total_hours">Total Hours: </h2>
-        <input id="save_button" type="submit" name="save" value="Save Changes">
+        <input id="save_button" type="submit" name="save" value="Save Changes"><span id="error_span"></span>
       </form>
     </main>
 

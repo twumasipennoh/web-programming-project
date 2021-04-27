@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="../images/logo_icon.ico">
     <!-- <link rel="stylesheet" href="../stylesheets/timesheetStyles.css" type="text/css"> -->
     <meta name="description" content="Computer Software Company">
-    <script src="../javascript/timesheetData.js"></script>
+    <!-- <script src="../javascript/payInfoCheck.js"></script> -->
   </head>
   <body>
 
@@ -58,8 +58,8 @@
       </div>
       <table>
         <form action="../pages/payInfo.php?employeeID=<?php echo $employeeID ?>" method="post">
-          <caption>Search dates:<input type="date" name="searchStart">-<input type="date" name="searchEnd">
-          <input type="submit" name="search" value="Search">
+          <caption>Search dates:<input id="start_date" type="date" name="searchStart">-<input id="end_date" type="date" name="searchEnd">
+          <input id="seach_button" type="submit" name="search" value="Search">
           </caption>
         </form>
         <thead>
@@ -82,8 +82,13 @@
                 $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND `date`='$endDate'";
                 $shifts = $conn -> query($query);
               } else if (!empty($startDate) && !empty($endDate)){
-                $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND (`date` BETWEEN '$startDate' AND '$endDate')";
-                $shifts = $conn -> query($query);
+                if ($startDate < $endDate){
+                  $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND (`date` BETWEEN '$startDate' AND '$endDate')";
+                  $shifts = $conn -> query($query);
+                } else {
+                  $query = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID AND (`date` BETWEEN '$endDate' AND '$startDate')";
+                  $shifts = $conn -> query($query);
+                }
               } else {
                 $q2 = "SELECT * FROM HR_Tables.timesheetTable WHERE employeeID=$employeeID";
                 $shifts = $conn -> query($q2);

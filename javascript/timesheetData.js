@@ -38,6 +38,7 @@ var loadTimesheet = function(){
 // calcDayTotal Function
 var calcDayTotal = function(){
   totalHours = "0:00";
+  var incorrectTimes = false;
   for (let i = 0; i < days.length; i++){
     var timeIn = $(days[i] + "in").value;
     var lunch = $(days[i] + "lunch").value;
@@ -76,11 +77,21 @@ var calcDayTotal = function(){
         addHours(total);
       }
     } else {
-      $(days[i] + "total").value = "0:00";
+      $(days[i] + "total").value = "";
+      // if (!isEmpty(timeIn) || !isEmpty(lunch) || !isEmpty(lunchIn) || !isEmpty(out)){
+      //   $('error_span').textContent = "Make sure time values are in the correct order";
+      //   incorrectTimes = true;
+      // }
     }
   }
 
   $("total_hours").innerHTML = "Total Hours: " + totalHours;
+  // if (!incorrectTimes){
+  //   $('error_span').textContent = "";
+  //   $('save_button').onsubmit = true;
+  // } else {
+  //   $('save_button').onsubmit = false;
+  // }
 }
 
 
@@ -97,6 +108,16 @@ var addHours = function(hours){
   m = m % 60;
   totalHours = h + ":" + m.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 }
+
+// ************************************************************************************************
+// isEmpty: check if a string is empty
+var isEmpty = function(str){
+  return (!str || str.length === 0);
+}
+
+// ************************************************************************************************
+// Check form before submission
+
 
 // ************************************************************************************************
 // Onload function

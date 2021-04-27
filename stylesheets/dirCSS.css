@@ -3,12 +3,12 @@ body {
   padding: 0;
   margin: 0 auto;
   max-width: 1500px;
+  border: 1px solid black;
+  box-shadow: 5px 10px 8px black;
 }
 
-
-
-
-table { 
+table {
+  margin-top: 1.5em;
 	background-color:lightgrey;
 	border-collapse:collapse;
 	color:#000;
@@ -18,22 +18,19 @@ table {
 th {
 	background-color:black;
 	color:white;
-	width:30%; 
+	width:30%;
 	}
-td, th { 
+td, th {
 	padding:5px;
 	border:0;
  }
-td { 
+td {
 	border-bottom:1px dotted black;
 	text-align:center;
  }
 
 main {
-	
 	text-align: center;
-	
-	
 }
 
 header {
@@ -74,9 +71,8 @@ nav a:hover, a:focus {color: gray;}
 
 /* Footer */
 footer {
-  /* color: white; */
+  border-top: 2px solid black;
   font-weight: lighter;
   text-align: center;
-  /* background-color: grey; */
   padding: 1rem 0;
 }

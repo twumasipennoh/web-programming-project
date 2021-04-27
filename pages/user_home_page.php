@@ -8,11 +8,14 @@
 
 <html lang="en">
   <head>
+    <style>
+      <?php include '../stylesheets/homeStyles.css'; ?>
+    </style>
     <meta charset="utf-8">
 
     <title>Artec</title>
     <link rel="shortcut icon" href="../images/logo_icon.ico">
-    <link rel="stylesheet" href="../stylesheets/homeStyles.css">
+    <!-- <link rel="stylesheet" href="../stylesheets/homeStyles.css"> -->
     <meta name="description" content="Computer Software Company">
   </head>
 
