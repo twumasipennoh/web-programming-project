@@ -9,11 +9,14 @@
 
 <html lang="en">
   <head>
+    <style>
+      <?php include '../stylesheets/addEmpCss.css'; ?>
+    </style>
     <meta charset="utf-8">
 
     <title>Artec</title>
     <link rel="shortcut icon" href="../images/logo_icon.ico">
-    <link rel="stylesheet" href="../stylesheets/addEmpCss.css">
+    <!-- <link rel="stylesheet" href="../stylesheets/addEmpCss.css"> -->
     <meta name="description" content="Computer Software Company">
     <script src="../javascript/deleteEmp.js"></script>
   </head>
