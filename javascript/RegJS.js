@@ -37,7 +37,7 @@ $("sec-q2-error").innerHTML = "*";
 	var emailVal = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 	var email = $("email").value;
 	var sub = true;
-	if ($("eID").value === ""){
+	if ($("eID").value == ""){
 
 		$("iderror").innerHTML = " This field is required.";
 		sub = false;
@@ -83,7 +83,7 @@ $("sec-q2-error").innerHTML = "*";
 
 	if (emailVal.test(email)) {
 
-		$("emerror").innerHTML = "";
+		$("emailerror").innerHTML = "";
 
 	}
 	else {
@@ -92,16 +92,12 @@ $("sec-q2-error").innerHTML = "*";
 		sub = false;
 	}
 
-	if (pass !== pass2) {
-
+	if (pass != pass2) {
 		$("pw2error").innerHTML = " Both passwords must match";
 		sub = false;
 	}
 	else {
-
 		$("pw2error").innerHTML = "";
-
-
 	}
 
 	if (paswd.test(pass)) {
@@ -115,7 +111,7 @@ $("sec-q2-error").innerHTML = "*";
 		sub = false;
 	}
 
-	if ($("security-q1-answer").value === ""){
+	if ($("security-q1-answer").value == ""){
 		$("sec-q1-error").innerHTML = " This field is required.";
 		sub = false;
 	}
@@ -123,7 +119,7 @@ $("sec-q2-error").innerHTML = "*";
 		$("sec-q1-error").innerHTML = "";
 	}
 
-	if ($("security-q2-answer").value === ""){
+	if ($("security-q2-answer").value == ""){
 		$("sec-q2-error").innerHTML = " This field is required.";
 		sub = false;
 	}
