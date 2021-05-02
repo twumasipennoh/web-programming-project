@@ -22,13 +22,13 @@ How To Run The Program
 
 
 Resources Used
-https://www.html.am/html-codes/tables/table-border.cfm
-https://www.w3resource.com/javascript/form/password-validation.php
-https://www.w3resource.com/javascript/form/email-validation.php
-String to time: https://www.php.net/manual/en/function.strtotime.php
-https://stackoverflow.com/questions/1361340/how-to-insert-if-not-exists-in-mysql
-Import CSS in php: https://stackoverflow.com/questions/6315772/how-to-import-include-a-css-file-using-php-code-and-not-html-code/6315792#:~:text=To%20use%20%22include%22%20to%20include,php%20(or%20styles
-Number Formatting: https://stackoverflow.com/questions/4483540/show-a-number-to-two-decimal-places#:~:text=Use%20the%20PHP%20number_format()%20function.,-https%3A%2F%2Fstackoverflow&text=%24retailPrice%20%3D%205.989%3B%20echo%20number_format,5.98%20without%20rounding%20the%20number
-PHP split string: https://www.daniweb.com/programming/web-development/threads/174472/split-a-string-into-two-parts
-Passing multiple variables PHP: https://stackoverflow.com/questions/13102489/passing-multiple-variables-to-another-page-in-url
-CSS Exclusion: https://css-tricks.com/almanac/selectors/n/not/
+  - https://www.html.am/html-codes/tables/table-border.cfm
+  - https://www.w3resource.com/javascript/form/password-validation.php
+  - https://www.w3resource.com/javascript/form/email-validation.php
+  - String to time: https://www.php.net/manual/en/function.strtotime.php
+  - https://stackoverflow.com/questions/1361340/how-to-insert-if-not-exists-in-mysql
+  - Import CSS in php: https://stackoverflow.com/questions/6315772/how-to-import-include-a-css-file-using-php-code-and-not-html-code/6315792#:~:text=To%20use%20%22include%22%20to%20include,php%20(or%20styles
+  - Number Formatting: https://stackoverflow.com/questions/4483540/show-a-number-to-two-decimal-places#:~:text=Use%20the%20PHP%20number_format()%20function.,-https%3A%2F%2Fstackoverflow&text=%24retailPrice%20%3D%205.989%3B%20echo%20number_format,5.98%20without%20rounding%20the%20number
+  - PHP split string: https://www.daniweb.com/programming/web-development/threads/174472/split-a-string-into-two-parts
+  - Passing multiple variables PHP: https://stackoverflow.com/questions/13102489/passing-multiple-variables-to-another-page-in-url
+  - CSS Exclusion: https://css-tricks.com/almanac/selectors/n/not/
