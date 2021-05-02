@@ -10,7 +10,7 @@ Contribution summary
 
   - Ricardo Zacarias: Ricardo created the Home Page, Timesheet Page, Pay Info Page, Admin Requests Page, and half of the Employee Requests Page. He also created the layout for the Nav Bar that was used at the top of every page. With all the pages he created, he made sure that they all worked entirely through the use of the database and any necessary javascript to perform the actions needed on the website. Apart from that, he worked on the general styling of all the pages to make sure the CSS properties made them look the same. Overall, he made a fair contribution to the project.
 
-  - Jeffrey Awuku-Boateng:
+  - Jeffrey Awuku-Boateng: Created the admin features which included the add and delete employee pages, registration check page, some parts of the registration page and request page. After creating all these pages, Jeffrey added their respected javascript validations and css design and if anything needed to connect to the database, he made sure that they did and worked properly. He also helped to create the timesheet table. He also checked that all links worked and went to the right pages. 
 
   - Christian Summerlin: Created the preliminary registration page and also did JavaScript validation for the registration page. Also made the registration confirmation and connected it to the registration page so that it goes there whenever the user has successfully registered. Christian also created the employee directory page and css for that, making it so that the employee can see all the employees in the company and also can filter by first name, last name, or job title. She contributed her part to the project.
 
