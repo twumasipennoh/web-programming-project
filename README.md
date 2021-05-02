@@ -18,6 +18,7 @@ Contribution summary
 How To Run The Program
   - You will need XAMPP to start Apache and MySQL.
   - You will need to create a database named “HR_Tables” and use the .sql file provided to fill up the database with the necessary tables and data.
+  - You will also need to modify the db_connection/database.php file with the host, port, socket, user, password, dbname information so that you can access the database you created.
   - Once you have started Apache and MySQL and have placed the web-programming-project folder in the htdocs folder inside of the xampp folder, you will need to use the link below to run it: http://localhost/web-programming-project/pages/welcome_page.html
 
 
