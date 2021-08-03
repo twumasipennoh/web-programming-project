@@ -4,6 +4,8 @@ Group Members
   - Jeffrey Awuku-Boateng
   - Christian Summerlin
 
+Description
+  An employee portal was created for the fictional tech company named Artec. The employees that work in this company will have the ability to login, update their timesheets, lookup employee emails, as well as a couple of other simple tasks. The website will also allow an admin to login with other capabilities such as adding/removing employees to the employee database and responding to client requests. 
 
 Contribution summary
   - Twumasi Pennoh: Twumasi created and set up the database in AWS so that all of the members of the group could access the same data in the database. He also created the Login page, Forgot Password page, and Personal Info page. He connected those pages and the Registration page to the database so that information would be passed between those pages and the database when a user performs an action. Overall, he contributed his part to the project.
